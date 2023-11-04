@@ -9,7 +9,7 @@
                 service your portfolios and grow your investment.
             </p>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gay-y-10">
                 <div class="text-center">
                     <div class="p-5  w-fit mx-auto rounded-full bg-black">
                         <i class="fas fa-shield-alt text-4xl text-green-500"></i>
