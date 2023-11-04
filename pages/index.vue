@@ -52,7 +52,7 @@ onMounted(() => {
     </div>
 
     <why-us></why-us>
-    <div class="mt-[400px]">
+    <div class="lg:mt-[350px] md:mt-[400px] mt-[800px]">
         <review></review>
     </div>
 

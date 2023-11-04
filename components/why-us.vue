@@ -9,7 +9,7 @@
                 service your portfolios and grow your investment.
             </p>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gay-y-10">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-y-12">
                 <div class="text-center">
                     <div class="p-5  w-fit mx-auto rounded-full bg-black">
                         <i class="fas fa-shield-alt text-4xl text-green-500"></i>
@@ -62,7 +62,7 @@
 
             </div>
         </div>
-        <div class="flex justify-center shadow-lg">
+        <div class="flex justify-center shadow-lg ">
         <div class="text-center max-w-3xl p-10 mx-auto absolute -mt-20 bg-black text-green-700">
             <p class="text-xl font-semibold">overview</p>
             <h2 class="text-4xl font-bold text-green-500 my-5">7 Years of experience</h2>
