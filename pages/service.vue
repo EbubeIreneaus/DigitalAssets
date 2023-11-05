@@ -18,6 +18,8 @@ onMounted(() => {
         </div>
        
     </div>
+    <service></service>
+    <review></review>
 </template>
 
 

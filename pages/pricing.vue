@@ -18,6 +18,7 @@ onMounted(() => {
         </div>
        
     </div>
+    <invest></invest>
 </template>
 
 
