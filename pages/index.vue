@@ -13,8 +13,8 @@ onMounted(() => {
         <div class="absolute z-30 sm:left-10 md:left-20 bottom-[30%] max-w-sm sm:max-w-md md:max-w-lg w-full ps-2">
             <h2 class="text-2xl text-white">Comprehensive financial advice and investment services that are tailored to meet
                 your individual needs.</h2>
-            <div class="flex flex-col md:flex-row md:gap-5 mt-3 sm:flex-row flex-column">
-                <div>
+            <div class="flex flex-col md:flex-row md:gap-5 gap-y-2 mt-3 sm:flex-row flex-column">
+                <div class="w-fit">
                     <link-btn-fa>Start membership</link-btn-fa>
                 </div>
                 <div class="w-fit">
@@ -52,7 +52,7 @@ onMounted(() => {
     </div>
 
     <why-us></why-us>
-    <div class="lg:mt-[350px] md:mt-[400px] mt-[800px]">
+    <div class="lg:mt-[350px] md:mt-[400px] mt-[600px]">
         <review></review>
     </div>
 
