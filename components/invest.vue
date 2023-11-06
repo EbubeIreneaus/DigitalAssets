@@ -106,11 +106,11 @@
                     <h2
                         class=" text-3xl text-center font-extrabold">Ultra</h2>
                     <p class="text-center font-serif font-semibold text-xl">
-                       &gt; $100,00
+                       &gt; $100,000
                     </p>
                     <ul role="list" class="text-center">
-                        <li class="py-3">100% ROI</li>
-                        <li class="py-3">Withdraw 96hrs</li>
+                        <li class="py-3">900% ROI</li>
+                        <li class="py-3">90 days</li>
                         <li class="py-3">24/7 Customer Support</li>
 
                        <div class="mt-14"> <link-btn-fa link="/auth/register" >Get Started</link-btn-fa></div>
