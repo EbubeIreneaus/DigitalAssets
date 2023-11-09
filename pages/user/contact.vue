@@ -5,7 +5,7 @@ const account = inject("account");
 definePageMeta({
     layout: "db",
 });
-console.log(account);
+
 const form = reactive({
     first_name: account.value.profile.user.first_name,
     last_name: account.value.profile.user.last_name,
@@ -13,8 +13,8 @@ const form = reactive({
     subject: "",
     message: "",
 });
-const send_feedback = async(e) => {
-    if(form.message == ''|| form.subject == ''){
+const send_feedback = async (e) => {
+    if (form.message == '' || form.subject == '') {
         alert('All fields are required, fill them out')
         return false
     }
@@ -34,146 +34,156 @@ const send_feedback = async(e) => {
         <div class=" py-2 w-full">
 
             <div class="contact_info -mt-10">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-10 offset-lg-1">
-                                <div class=" !flex lg:!flex-row !flex-col justify-between align-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1">
+                            <div class=" !flex lg:!flex-row !flex-col justify-between align-center">
 
-                                    <!-- Contact Item -->
-                                    <div class="contact_info_item !flex flex-row items-center justify-start">
-                                        <div class="contact_info_image"><img src="https://img.icons8.com/office/24/000000/iphone.png" alt=""></div>
-                                        <div class="contact_info_content">
-                                            <div class="contact_info_title">Phone</div>
-                                            <div class="contact_info_text">+1 401 594 9299</div>
-                                        </div>
+                                <!-- Contact Item -->
+                                <div class="contact_info_item !flex flex-row items-center justify-start">
+                                    <div class="contact_info_image"><img
+                                            src="https://img.icons8.com/office/24/000000/iphone.png" alt=""></div>
+                                    <div class="contact_info_content">
+                                        <div class="contact_info_title">Phone</div>
+                                        <div class="contact_info_text">+1 401 594 9299</div>
                                     </div>
-
-                                    <!-- Contact Item -->
-                                    <div class="contact_info_item !flex flex-row items-center justify-start">
-                                        <div class="contact_info_image"><img src="https://img.icons8.com/ultraviolet/24/000000/filled-message.png" alt=""></div>
-                                        <div class="contact_info_content">
-                                            <div class="contact_info_title">Email</div>
-                                            <div class="contact_info_text ">service@springfieldinvest.com</div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Contact Item -->
-                                    <div class="contact_info_item !flex flex-row items-center justify-start">
-                                        <div class="contact_info_image"><img src="https://img.icons8.com/ultraviolet/24/000000/map-marker.png" alt=""></div>
-                                        <div class="contact_info_content">
-                                            <div class="contact_info_title">Address</div>
-                                            <div class="contact_info_text">service@springfieldinvest.com</div>
-                                        </div>
-                                    </div>
-
                                 </div>
+
+                                <!-- Contact Item -->
+                                <div class="contact_info_item !flex flex-row items-center justify-start">
+                                    <div class="contact_info_image"><img
+                                            src="https://img.icons8.com/ultraviolet/24/000000/filled-message.png" alt="">
+                                    </div>
+                                    <div class="contact_info_content">
+                                        <div class="contact_info_title">Email</div>
+                                        <div class="contact_info_text ">service@springfieldinvest.com</div>
+                                    </div>
+                                </div>
+
+                                <!-- Contact Item -->
+                                <div class="contact_info_item !flex flex-row items-center justify-start">
+                                    <div class="contact_info_image"><img
+                                            src="https://img.icons8.com/ultraviolet/24/000000/map-marker.png" alt=""></div>
+                                    <div class="contact_info_content">
+                                        <div class="contact_info_title">Address</div>
+                                        <div class="contact_info_text">service@springfieldinvest.com</div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Contact Form -->
-
-                <div class="contact_form" ng-controller="contactform">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-10 offset-lg-1">
-                                <div class="contact_form_container">
-                                    <div class="contact_form_title">Get in Touch</div>
-
-                                    <form id="contact_form" @submit.prevent="send_feedback($event)">
-                                        <div class="contact_form_inputs !flex lg:!flex-row !flex-col justify-between lg:gap-2 gap-4">
-                                           <div class="!w-full">
-                                            <label for="" class="block">First Name</label>
-                                                <input type="text" id="" readonly 
-                                                class="contact_form_name input_field !w-full bg-transparent !border-0  ring-1 ring-primary-hover"
-                                                 v-model="form.first_name" required="required" data-error="Name is required.">
-                                           </div>
-
-                                            <div class="!w-full">
-                                                <label for="" class="block">Last Name</label>
-                                                <input type="email" id="" readonly 
-                                                class="contact_form_email input_field !w-full bg-transparent ring-1 ring-primary-hover" 
-                                                v-model="form.last_name" required="required" data-error="Email is required.">
-                                            </div>
-
-                                            <div class="!w-full">
-                                                <label for="" class="block">Email</label>
-                                                <input type="text" id="" readonly
-                                                class="contact_form_phone input_field !w-full  bg-transparent ring-1 ring-primary-hover"
-                                                 v-model="form.email" >
-                                            </div>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label for="">Subject</label>
-                                            <input type="text" id="" class="contact_form_phone input_field !w-full  bg-transparent ring-1 ring-primary-hover"
-                                             v-model="form.subject" placeholder="subject" required>
-                                        </div>
-
-                                        <div class="contact_form_text">
-                                            <label for="" class="block">Message</label>
-                                            <textarea id="contact_form_message" class="text_field contact_form_message  bg-transparent ring-1 ring-primary-hover" 
-                                             rows="4" placeholder="Message" required="required" data-error="Please, write us a message." v-model="form.message">
-                                        </textarea>
-                                        </div>
-                                        <div class="contact_form_button">
-                                            <btn type="submit" class="mt-2  group mb-3" id="sbtn"> 
-                                <i class="fas fa-spinner animate-spin !hidden group-disabled:!inline-block"></i> send
-                                 </btn>
-                                        </div>
-                                    </form>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                </div>
-
-                <!--  xxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx-->
-
             </div>
-        </div>
-    <!-- </div> -->
 
+            <!-- Contact Form -->
 
+            <div class="contact_form" ng-controller="contactform">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 offset-lg-1">
+                            <div class="contact_form_container">
+                                <div class="contact_form_title">Get in Touch</div>
 
+                                <form id="contact_form" @submit.prevent="send_feedback($event)">
+                                    <div
+                                        class="contact_form_inputs !flex lg:!flex-row !flex-col justify-between lg:gap-2 gap-4">
+                                        <div class="!w-full">
+                                            <label for="" class="block">First Name</label>
+                                            <input type="text" id="" readonly
+                                                class="contact_form_name input_field !w-full bg-transparent !border-0  ring-1 ring-primary-hover"
+                                                v-model="form.first_name" required="required"
+                                                data-error="Name is required.">
+                                        </div>
 
+                                        <div class="!w-full">
+                                            <label for="" class="block">Last Name</label>
+                                            <input type="email" id="" readonly
+                                                class="contact_form_email input_field !w-full bg-transparent ring-1 ring-primary-hover"
+                                                v-model="form.last_name" required="required"
+                                                data-error="Email is required.">
+                                        </div>
 
+                                        <div class="!w-full">
+                                            <label for="" class="block">Email</label>
+                                            <input type="text" id="" readonly
+                                                class="contact_form_phone input_field !w-full  bg-transparent ring-1 ring-primary-hover"
+                                                v-model="form.email">
+                                        </div>
+                                    </div>
 
+                                    <div class="mb-3">
+                                        <label for="">Subject</label>
+                                        <input type="text" id=""
+                                            class="contact_form_phone input_field !w-full  bg-transparent ring-1 ring-primary-hover"
+                                            v-model="form.subject" placeholder="subject" required>
+                                    </div>
 
-            <!-- <section class="">
-                <div class="flex items-center justify-center py-8 mx-auto sm:py-0">
-                    <div class="mt-[7%]  max-w-sm w-full px-3 overflow-x-hidden ">
-                        <div class="bg-green-800/50 rounded-lg shadow text-center text-green-400
-                        -translate-x-[400px] opacity-0 transition-all duration-500" id="alert">
-                            <p class="text-xl mb-1">Thank You for contacting us!</p>
-                            <small class="text-violet-200">Our customer service agent will get back to you as quick as
-                                possible</small>
-                        </div>
-
-                        <form @submit.prevent="send_feedback($event)">
-                            <div>
-                                <div class="mt-7 mb-4">
-                                    <label for="" class="text-primary-hover">Subject: </label>
-                                    <input type="text" placeholder="subject" id=""
-                                        class="w-full py-2 0 px-2 rounded-lg" v-model="form.subject" />
+                                    <div class="contact_form_text">
+                                        <label for="" class="block">Message</label>
+                                        <textarea id="contact_form_message"
+                                            class="text_field contact_form_message  bg-transparent ring-1 ring-primary-hover"
+                                            rows="4" placeholder="Message" required="required"
+                                            data-error="Please, write us a message." v-model="form.message">
+                                        </textarea>
                                 </div>
-                                <label for="" class="text-primary-hover">Message: </label>
-                                <textarea name="" id="" cols="30" rows="5" v-model="form.message"
-                                    class="w-full p-2 rounded-lg" placeholder="message"></textarea>
-                            </div>
-                            <btn type="submit" class="mt-2 w-full group mb-3" id="sbtn"> 
-                                <i class="fas fa-spinner animate-spin !hidden group-disabled:!inline-block"></i> send
-                                 </btn>
-                        </form>
+                                <div class="contact_form_button">
+                                    <button type="submit" class="mt-2 px-14 py-3 group mb-3 ring-1 hover:ring-4" id="sbtn">
+                                        <i class="fas fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
+                                        send
+                                    </button>
+                                </div>
+                            </form>
+
+                        </div>
                     </div>
                 </div>
-            </section> -->
-        <!-- </div>
-    </div> -->
-   
+            </div>
+
+        </div>
+
+        <!--  xxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx-->
+
+    </div>
+</div>
+<!-- </div> -->
+
+
+
+
+
+
+
+    <!-- <section class="">
+                    <div class="flex items-center justify-center py-8 mx-auto sm:py-0">
+                        <div class="mt-[7%]  max-w-sm w-full px-3 overflow-x-hidden ">
+                            <div class="bg-green-800/50 rounded-lg shadow text-center text-green-400
+                            -translate-x-[400px] opacity-0 transition-all duration-500" id="alert">
+                                <p class="text-xl mb-1">Thank You for contacting us!</p>
+                                <small class="text-violet-200">Our customer service agent will get back to you as quick as
+                                    possible</small>
+                            </div>
+
+                            <form @submit.prevent="send_feedback($event)">
+                                <div>
+                                    <div class="mt-7 mb-4">
+                                        <label for="" class="text-primary-hover">Subject: </label>
+                                        <input type="text" placeholder="subject" id=""
+                                            class="w-full py-2 0 px-2 rounded-lg" v-model="form.subject" />
+                                    </div>
+                                    <label for="" class="text-primary-hover">Message: </label>
+                                    <textarea name="" id="" cols="30" rows="5" v-model="form.message"
+                                        class="w-full p-2 rounded-lg" placeholder="message"></textarea>
+                                </div>
+                                <btn type="submit" class="mt-2 w-full group mb-3" id="sbtn"> 
+                                    <i class="fas fa-spinner animate-spin !hidden group-disabled:!inline-block"></i> send
+                                     </btn>
+                            </form>
+                        </div>
+                    </div>
+                </section> -->
+    <!-- </div>
+        </div> -->
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');
@@ -411,6 +421,5 @@ h6 {
         padding-right: 25px;
     }
 
-}
-</style>
+}</style>
 
