@@ -24,16 +24,16 @@ const Login = async (e) => {
   if (res.data.value.status == "success") {
     e.target.reset();
     if (remember_me.value) {
-      Cookies.set('userId', res.data.value.userId, { expires: 30 })
+      Cookies.set('profileId', res.data.value.profileId, { expires: 30 })
     } else {
-      Cookies.set('userId', res.data.value.userId)
+      Cookies.set('profileId', res.data.value.profileId)
     }
     useRouter().push("/user/");
   } else if(res.data.value.status == "unverified"){
     if (remember_me.value) {
-      Cookies.set('userId', res.data.value.userId, { expires: 30 })
+      Cookies.set('profileId', res.data.value.profileId, { expires: 30 })
     } else {
-      Cookies.set('userId', res.data.value.userId)
+      Cookies.set('profileId', res.data.value.profileId)
     }
     useRouter().push('/auth/verify/')
   }else{

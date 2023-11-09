@@ -6,18 +6,18 @@ definePageMeta({
 })
 
 const url = inject("url");
-const userId = ref(null);
+const profileId = ref(null);
 
 const send_verification_email = async () => {
     const btn = document.getElementById('resend_button')
     btn.disabled = true
     const res = await Axios.get(`${url}auth/resend_link/`, {
-        params: { userId: userId.value },
+        params: { profileId: profileId.value },
     });
     if (res.data.status == "success") {
-        Cookies.set("userId", res.data.userId);
+        Cookies.set("profileId", res.data.profileId);
     }else{
-        useRouter().push("/auth/signin");
+        useRouter().push("/auth/login");
     }
 
     const timeout = setTimeout(()=>{
@@ -27,8 +27,8 @@ const send_verification_email = async () => {
 };
 
 onMounted(() => {
-    if (Cookies.get("userId")) {
-        userId.value = Cookies.get("userId");
+    if (Cookies.get("profileId")) {
+        profileId.value = Cookies.get("profileId");
         // send_verification_email()
     } else {
         // useRouter().push("/auth/signin");

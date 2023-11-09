@@ -1,4 +1,13 @@
 <script setup>
+useHead({
+    script: [
+        {
+          
+        }
+    ]
+})
+
+
 const year = new Date().getFullYear()
 const navLinks = ref([
     { "title": 'Home', "link": "/" },
@@ -10,16 +19,16 @@ const navLinks = ref([
     { "title": 'Login', "link": "/auth/login" },
 ])
 
-const toogleNav = () =>{
+const toogleNav = () => {
     let nav = document.getElementsByTagName('nav')[0]
-   nav.classList.toggle("!h-[350px]")
-   nav.classList.toggle("!opacity-100")
+    nav.classList.toggle("!h-[350px]")
+    nav.classList.toggle("!opacity-100")
 }
-const changeNavBgColor = () =>{
+const changeNavBgColor = () => {
     const header = document.getElementsByTagName('header')[0]
     if (window.scrollY >= 300) {
         header.classList.add("!bg-black")
-    }else{
+    } else {
         header.classList.remove("!bg-black")
     }
 }
@@ -38,10 +47,12 @@ onMounted(() => {
                     <button class="btn p-3 lg:hidden rounded-lg ring-1 ring-green-700" @click="toogleNav">
                         <i class="fa fa-bars text-white"></i></button>
                 </div>
-                <nav class=" flex justify-center items-center  h-0 opacity-0 lg:opacity-100 overflow-hidden transition-all duration-500  
-                lg:h-full absolute lg:relative left-0 top-20 lg:top-0 w-full  z-40 lg:z-50 bg-black/90 lg:bg-transparent text-green-700 ">
+                <nav
+                    class=" flex justify-center items-center  h-0 opacity-0 lg:opacity-100 overflow-hidden transition-all duration-500  
+                    lg:h-full absolute lg:relative left-0 top-20 lg:top-0 w-full  z-40 lg:z-50 bg-black/90 lg:bg-transparent text-green-700 ">
                     <ul class=" flex flex-col  lg:flex-row items-left lg:items-center w-full lg:w-fit py-6 lg:py-0">
-                        <NuxtLink :to="x.link" v-for="x, index in navLinks" class="px-5 hover:text-green-300 font-semibold py-2.5 lg:py-0">
+                        <NuxtLink :to="x.link" v-for="x, index in navLinks"
+                            class="px-5 hover:text-green-300 font-semibold py-2.5 lg:py-0">
                             <li class="">{{ x.title }}</li>
                         </NuxtLink>
                     </ul>
@@ -52,9 +63,9 @@ onMounted(() => {
                         client area <i class="fa fa-arrow-right mt-px ms-px"></i></nuxt-link>
                 </div>
             </div>
-        </header>
+    </header>
 
-        <main>
+    <main>
             <slot></slot>
         </main>
 
@@ -110,9 +121,9 @@ onMounted(() => {
                                     <li>
                                         <nuxt-link to="/auth/register"
                                             class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm">
-                                        Register</nuxt-link>
-                                </li>
-                                <li>
+                                            Register</nuxt-link>
+                                    </li>
+                                    <li>
                                         <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
                                             href="#">Terms &amp; Conditions</a>
                                     </li>
@@ -121,9 +132,9 @@ onMounted(() => {
                                             href="#">Privacy Policy</a>
                                     </li>
                                     <!-- <li>
-                                            <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                                                href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
-                                        </li> -->
+                                                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                                                    href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                                            </li> -->
                                 </ul>
                             </div>
                         </div>

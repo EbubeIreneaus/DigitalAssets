@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 definePageMeta({
   layout: 'auth'
 })
+
 const url = inject("url");
 const cpass = ref(null);
 const countries = ref([
@@ -211,6 +212,7 @@ const form = reactive({
   code: "+93",
   phone: "",
   password: "",
+  referral: useRoute().params.refferal
 });
 
 const changeCountryCode = () => {
@@ -268,8 +270,8 @@ const Register = async (e) => {
 
   if (res.data.value.status == "success") {
     document.getElementById('reg_form').reset();
-    Cookies.set('userId', res.data.value.userId)
-    Cookies.set('vkey', res.data.value.key, { expires: 1 / 48 })
+    Cookies.set('profileId', res.data.value.profileId)
+    // Cookies.set('vkey', res.data.value.key, { expires: 1 / 48 })
     useRouter().push('/auth/verify')
   } else {
     switch (res.data.value.code) {

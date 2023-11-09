@@ -14,11 +14,11 @@ const kb = ref(false) //key broken
 
 const vm = ref(false); // verified message. boolean to or not display verifed message
 
-const { key } = useRoute().params;
+const { id, key } = useRoute().params;
 
 
 const verify_account = async () => {
-    const res = await Axios.post(`${url}auth/verify/`, { 'key': key });
+    const res = await Axios.post(`${url}auth/verify/`, { 'key': key, 'profileId':id });
     if (res.data) {
 
         if (res.data.status == "success") {
