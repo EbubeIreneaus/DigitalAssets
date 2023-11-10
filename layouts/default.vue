@@ -40,8 +40,8 @@ onMounted(() => {
     <div class="text-black">
         <header class="fixed bg-transparent z-50 w-full transition-all duration-300">
             <div class="h-20 flex items-center justify-between px-5 relative ">
-                <div class="text-2xl font-bold w-14 h-14 flex-grow-0">
-                    <img src="~/assets/media/logo.jpg" alt="" class="w-full rounded-full">
+                <div class="!w-fit">
+                   <logo></logo>
                 </div>
                 <div>
                     <button class="btn p-3 lg:hidden rounded-lg ring-1 ring-green-700" @click="toogleNav">
@@ -50,16 +50,16 @@ onMounted(() => {
                 <nav
                     class=" flex justify-center items-center  h-0 opacity-0 lg:opacity-100 overflow-hidden transition-all duration-500  
                     lg:h-full absolute lg:relative left-0 top-20 lg:top-0 w-full  z-40 lg:z-50 bg-black/90 lg:bg-transparent text-green-700 ">
-                    <ul class=" flex flex-col  lg:flex-row items-left lg:items-center w-full lg:w-fit py-6 lg:py-0">
+                    <ul class=" flex flex-col  lg:flex-row items-left lg:items-center w-full lg:w-fit py-6 lg:py-0 text-white">
                         <NuxtLink :to="x.link" v-for="x, index in navLinks"
-                            class="px-5 hover:text-green-300 font-semibold py-2.5 lg:py-0">
+                            class="px-5 hover:text-green-700 font-semibold py-2.5 lg:py-0">
                             <li class="">{{ x.title }}</li>
                         </NuxtLink>
                     </ul>
                 </nav>
                 <div class="flex-shrink-0 hidden sm:block ">
                     <nuxt-link to="/auth/login"
-                        class="px-12 py-4 ring-1 ring-green-500  hover:bg-green-700 hover:text-black flex items-center rounded-lg bg-black text-green-700">
+                        class="px-12 py-4 ring-1 ring-green-500   text-white hover:text-green-700 flex items-center rounded-lg bg-black text-green-700">
                         client area <i class="fa fa-arrow-right mt-px ms-px"></i></nuxt-link>
                 </div>
             </div>

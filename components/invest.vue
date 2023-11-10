@@ -50,7 +50,7 @@
                         $100 - $2000
                     </p>
                     <ul role="list" class="text-center">
-                        <li class="py-3">25% ROI</li>
+                        <li class="py-3">3.5% Daily</li>
                         <li class="py-3">5 days</li>
                         <li class="py-3">24/7 Customer Support</li>
 
@@ -65,7 +65,7 @@
                         $2,001 - $20,000
                     </p>
                     <ul role="list" class="text-center">
-                        <li class="py-3">59.9% ROI</li>
+                        <li class="py-3">6.6% Daily</li>
                         <li class="py-3">7 days</li>
                         <li class="py-3">24/7 Customer Support</li>
 
@@ -95,7 +95,7 @@
                         $20,001 - $100,000
                     </p>
                     <ul role="list" class="text-center">
-                        <li class="py-3">360% ROI</li>
+                        <li class="py-3">10% Daily</li>
                         <li class="py-3">30 days</li>
                         <li class="py-3">24/7 Customer Support</li>
 
@@ -109,7 +109,7 @@
                        &gt; $100,000
                     </p>
                     <ul role="list" class="text-center">
-                        <li class="py-3">900% ROI</li>
+                        <li class="py-3">12% Daily</li>
                         <li class="py-3">90 days</li>
                         <li class="py-3">24/7 Customer Support</li>
 

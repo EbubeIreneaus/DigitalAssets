@@ -15,10 +15,10 @@ onMounted(() => {
                 your individual needs.</h2>
             <div class="flex flex-col md:flex-row md:gap-5 gap-y-2 mt-3 sm:flex-row flex-column">
                 <div class="w-fit">
-                    <link-btn-fa>Start membership</link-btn-fa>
+                    <link-btn-fa link="auth/register/">Start membership</link-btn-fa>
                 </div>
                 <div class="w-fit">
-                    <link-btn-fa>Login</link-btn-fa>
+                    <link-btn-fa link="auth/login">Login</link-btn-fa>
                 </div>
             </div>
         </div>
@@ -64,9 +64,9 @@ onMounted(() => {
             quipped with combined experiences of over 8 decades which carefully conduct market studies for trading
             purposes in other to achieve success trading in the market.</p>
 
-        <div class="w-fit my-5">
+        <!-- <div class="w-fit my-5">
             <link-btn-fa>Start Membership &nbsp; </link-btn-fa>
-        </div>
+        </div> -->
     </div>
 
     <div class="bg-[url('~/assets/media/review-bg.jpg')] relative h-fit py-44 text-center 
@@ -76,7 +76,7 @@ onMounted(() => {
             <h1 class="text-4xl text-white z-20">Register now to claim your Airdrops. Offer Ends Soon</h1>
 
             <div class="w-fit mx-auto my-5">
-            <link-btn-fa>Start Membership &nbsp;</link-btn-fa>
+            <link-btn-fa link="/auth/register/">Start Membership &nbsp;</link-btn-fa>
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@ onMounted(() => {
         <p>We help individuals, businesses and institutions build, preserve and manage wealth so they can pursue their financial goals.</p>
 
         <div class="w-fit my-5">
-            <link-btn-fa>Start Membership &nbsp; </link-btn-fa>
+            <link-btn-fa link="/auth/register/">Start Membership &nbsp; </link-btn-fa>
         </div>
     </div>
 </template>

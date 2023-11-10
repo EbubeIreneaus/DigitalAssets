@@ -37,7 +37,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="border border-transparent">
+    <div class="border border-transparent h-screen bg-black text-green-500">
         <div class="w-full h-screen -mt-14 relative grid content-center">
             <div class="max-w-sm sm:max-w-md md:max-w-lg !w-full mx-auto text-center py-5 px-2 shadow-md shadow-violet-300">
                 <h2 class="text-2xl font-bold font-mono">Verify your email account</h2>

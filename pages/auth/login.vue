@@ -44,17 +44,18 @@ const Login = async (e) => {
 </script>
 
 <template>
-  <div class="flex justify-center">
+  <div class="flex justify-center h-screen bg-black text-green-500">
     <br />
     <div class="h-max py-2 mt-20 w-full">
       <section class="">
         <div class="flex items-center justify-center px-4 py-8 mx-auto sm:px-10 sm:py-0">
           <div class="w-full rounded-lg md:mt-0 sm:max-w-md xl:p-0 px-4 py-8 shadow-lg shadow-violet-300">
             <div class="space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl">
-                Sign in to your account
-              </h1>
+              <div class="mx-auto w-fit">
+                <logo></logo>
+              </div>
               <form class="space-y-4 md:space-y-6" @submit.prevent="Login">
+
                 <div>
                   <label for="username" class="block mb-2 text-sm font-medium">Username</label>
                   <input type="text" v-model="form.username" id="username"

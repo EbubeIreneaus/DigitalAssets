@@ -85,7 +85,7 @@ const send_feedback = async (e) => {
                                             src="https://img.icons8.com/ultraviolet/24/000000/map-marker.png" alt=""></div>
                                     <div class="contact_info_content">
                                         <div class="contact_info_title">Address</div>
-                                        <div class="contact_info_text">service@digitalassets.com.ng</div>
+                                        <div class="contact_info_text">4th St, Downey, CA 90241, USA</div>
                                     </div>
                                 </div>
 
@@ -160,6 +160,12 @@ const send_feedback = async (e) => {
                 </div>
             </div>
 
+            <div>
+                <iframe class="w-full h-[300px]"
+                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d827.4598337208187!2d-118.13431063789609!3d33.94526018865031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sng!4v1699603623058!5m2!1sen!2sng"
+                  style="border:0;" allowfullscreen="" loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
 
         <!--  xxxxxxxxxxxxxxxxxxxxxxxxxx  xxxxxxxxxxxxxxxx-->

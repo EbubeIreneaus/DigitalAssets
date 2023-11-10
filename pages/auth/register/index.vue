@@ -290,20 +290,20 @@ const Register = async (e) => {
 </script>
 
 <template>
-  <div class="flex justify-center">
+  <div class="flex justify-center bg-black text-green-500">
     <div class="h-max py-2 w-full ">
       <section class="">
         <div class="flex items-center justify-center px-4 py-8 mx-auto sm:px-10 sm:py-0">
           <div class="w-full rounded-lg md:mt-0 xl:p-0 px-4 py-8 shadow-lg shadow-violet-300">
             <div class="space-y-4 md:space-y-6 sm:p-8">
-              <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl">
-                Create a new account
-              </h1>
+             
               <div class="grid md:grid-cols-2 gap-x-7 gap-y-5">
-                <div>
+                <div class="hidden md:block">
                   <img src="~/assets/media/logo.jpg" alt="" class="w-full h-full object-cover object-center">
                 </div>
+
                 <form class="space-y-4 md:space-y-6" id="reg_form" @submit.prevent="Register">
+                    <div class="w-fit mx-auto"><logo></logo></div>
                   <div class="flex flex-col md:flex-row gap-3">
                     <div class="w-full">
                       <label for="firstname" class="mb-2 text-sm font-medium">First Name</label>
