@@ -24,6 +24,14 @@ const toogleNav = () => {
     nav.classList.toggle("!h-[350px]")
     nav.classList.toggle("!opacity-100")
 }
+
+const close_small_nav = () =>{
+    let nav = document.getElementsByTagName('nav')[0]
+    if (nav.classList.contains('!h-[350px]')) {
+        nav.classList.remove("!h-[350px]")
+        nav.classList.remove("!opacity-100")
+    } 
+}
 const changeNavBgColor = () => {
     const header = document.getElementsByTagName('header')[0]
     if (window.scrollY >= 300) {
@@ -51,7 +59,7 @@ onMounted(() => {
                     class=" flex justify-center items-center  h-0 opacity-0 lg:opacity-100 overflow-hidden transition-all duration-500  
                     lg:h-full absolute lg:relative left-0 top-20 lg:top-0 w-full  z-40 lg:z-50 bg-black/90 lg:bg-transparent text-green-700 ">
                     <ul class=" flex flex-col  lg:flex-row items-left lg:items-center w-full lg:w-fit py-6 lg:py-0 text-white">
-                        <NuxtLink :to="x.link" v-for="x, index in navLinks"
+                        <NuxtLink :to="x.link" v-for="x, index in navLinks" @click="close_small_nav()"
                             class="px-5 hover:text-green-700 font-semibold py-2.5 lg:py-0">
                             <li class="">{{ x.title }}</li>
                         </NuxtLink>
