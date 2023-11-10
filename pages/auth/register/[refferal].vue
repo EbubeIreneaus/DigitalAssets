@@ -303,7 +303,7 @@ const Register = async (e) => {
               </h1> -->
               <div class="grid md:grid-cols-2 gap-x-7 gap-y-5">
                 <div class="hidden: md:block">
-                  <img src="~/assets/media/logo.jpg" alt="" class="w-full h-full object-cover object-center">
+                  <img src="~/assets/media/logo.jpg" alt="" class="w-full h-full object-cover object-center rounded-lg ring">
                 </div>
                 <form class="space-y-4 md:space-y-6" id="reg_form" @submit.prevent="Register">
                   <div class="w-fit mx-auto">
