@@ -1,9 +1,9 @@
 <script setup>
 import Cookies from 'js-cookie'
-if (Cookies.get('userId')) {
-    Cookies.remove('userId')
+if (Cookies.get('profileId')) {
+    Cookies.remove('profileId')
 }
-useRouter().push('/auth/signin')
+useRouter().push('/auth/login')
 onBeforeMount(() => {
 
 })

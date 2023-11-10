@@ -29,9 +29,9 @@ const send_verification_email = async () => {
 onMounted(() => {
     if (Cookies.get("profileId")) {
         profileId.value = Cookies.get("profileId");
-        // send_verification_email()
+        send_verification_email()
     } else {
-        // useRouter().push("/auth/signin");
+        useRouter().push("/auth/signin");
     }
 });
 </script>

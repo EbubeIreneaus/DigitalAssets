@@ -4,8 +4,10 @@ import Axios from 'axios'
 const profileId = Cookies.get('profileId')
 const account = ref(null)
 provide('profileId', profileId)
-const url = 'http://127.0.0.1:8000/'
-// const url = 'https://backend-springfield.vercel.app/'
+
+
+const url = 'https://digital-assets-b.vercel.app/'
+// const url = "http://127.0.0.1:8000/"
 
 provide('url', url)
 
@@ -34,7 +36,7 @@ const nav = ref([
     { title: "account", link: "", icon:"fa-solid fa-address-card"},
     { title: "referral", link: "", icon:"fa-solid fa-down-left-and-up-right-to-center"},
     { title: "contact us", link: "/user/contact", icon: 'fa-solid fa-phone' },
-    { title: "logout", link: "/auth/signout", icon:"fa-solid fa-right-from-bracket"},
+    { title: "logout", link: "/auth/logout", icon:"fa-solid fa-right-from-bracket"},
 ])
 
 const checkUser = () => {
@@ -99,7 +101,7 @@ onMounted(() => {
                         <p class="capitalize font-semibold">{{ account.profile.user.first_name }} {{
                             account.profile.user.last_name }}</p>
                         <small>{{ account.profile.user.username }}</small>
-                        <small class="block font-sans font-bold text-green-700">$5.00</small>
+                        <small class="block font-sans font-bold text-green-700">${{ account.balance }}</small>
                     </div>
                 </div>
                 <div class="mb-5">
