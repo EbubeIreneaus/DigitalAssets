@@ -2,8 +2,8 @@
 
 <template>
     <section
-        class="relative text-green-600  bg-[url('~/assets/media/review-bg.jpg')] bg-cover bg-center before:absolute before:w-full before:h-full before:top-0
-         before:left-0 before:bg-slate-950/70">
+        class="relative text-green-100  bg-[url('~/assets/media/review-bg.jpg')] bg-cover bg-center before:absolute before:w-full before:h-full before:top-0
+         before:left-0 before:bg-slate-950/90">
 
         <div class="py-10 z-40">
             <h2
@@ -14,14 +14,14 @@
 
             <div class="flex lg:flex-row flex-wrap gap-5 mt-10 justify-center py-14 px-5 ">
                 <div class="flex flex-col gap-2 shadow-md items-center px-5 py-5 basis-[350px] grow z-40">
-                    <h2 class=" text-2xl text-green-500 font-bold">Choose a Package</h2>
+                    <h2 class=" text-2xl text-green-200 font-bold">Choose a Package</h2>
                     <p class="text-center">
                         You can choose from our robust packages that have been tailored to suit your quest.
                         No hidden Charges, what you see is what you get. Upgrades are also inclusive.
                     </p>
                 </div>
                 <div class="flex flex-col gap-2 shadow-md items-center  px-5 py-5 basis-[350px] grow z-40">
-                    <h2 class=" text-2xl text-green-500 font-bold">Deposit Funds</h2>
+                    <h2 class=" text-2xl text-green-200 font-bold">Deposit Funds</h2>
                     <p class="text-center font-semibold">
                         Choose from Paypal and all the Money Order (Netteler, Skrill, Master Card) to Bitcoin and
                         effortlessly fund your account.
@@ -29,7 +29,7 @@
                 </div>
 
                 <div class="flex flex-col gap-2 shadow-md items-center  px-5 py-5 basis-[350px] grow z-40">
-                    <h2 class=" text-2xl text-green-500 font-bold">Withdraw Profits</h2>
+                    <h2 class=" text-2xl text-green-200 font-bold">Withdraw Profits</h2>
                     <p class="text-center font-semibold">
                         With Quick and Fast Withdrawals, you can be sure to receive your profit into your desired channel of
                         withdrawal within 5 business working days.
@@ -46,13 +46,12 @@
                 <div class="flex flex-col gap-5 shadow-sm items-center shadow-slate-300 px-5  py-7">
                     <h2
                         class=" text-3xl text-center font-extrabold">Standard</h2>
-                    <p class="text-center font-serif font-semibold text-xl">
-                        $100 - $2000
-                    </p>
                     <ul role="list" class="text-center">
-                        <li class="py-3">3.5% Daily</li>
-                        <li class="py-3">5 days</li>
-                        <li class="py-3">24/7 Customer Support</li>
+                        <li class="py-1">Minimum: $100</li>
+                        <li class="py-2">Maximum: $2000</li>
+                        <li class="py-1">Minimum ROI: 3.5% daily</li>
+                        <li class="py-2">Duration: 5days</li>
+                        <li class="py-1">Referral Commision: 10%</li>
 
                        <div class="mt-14"> <link-btn-fa link="/auth/register">Get Started</link-btn-fa></div>
                     </ul>
@@ -61,13 +60,13 @@
                 <div class="flex flex-col gap-5 shadow-sm items-center shadow-slate-300 px-5  py-7">
                     <h2
                         class=" text-3xl text-center font-extrabold"> Silver</h2>
-                    <p class="text-center font-serif font-semibold text-xl">
-                        $2,001 - $20,000
-                    </p>
+                
                     <ul role="list" class="text-center">
-                        <li class="py-3">6.6% Daily</li>
-                        <li class="py-3">7 days</li>
-                        <li class="py-3">24/7 Customer Support</li>
+                        <li class="py-1">Minimum: $2,001</li>
+                        <li class="py-2">Maximum: $20,000</li>
+                        <li class="py-1">Minimum ROI: 6.6% daily</li>
+                        <li class="py-2">Duration: 7days</li>
+                        <li class="py-1">Referral Commision: 10%</li>
 
                        <div class="mt-14"> <link-btn-fa   link="/auth/register" >Get Started</link-btn-fa></div>
                     </ul>
@@ -91,13 +90,13 @@
                    <div class="flex flex-col gap-5 shadow-sm items-center shadow-slate-300 px-5  py-7">
                     <h2
                         class=" text-3xl text-center  font-extrabold">Premuim</h2>
-                    <p class="text-center font-serif font-semibold text-xl">
-                        $20,001 - $100,000
-                    </p>
                     <ul role="list" class="text-center">
-                        <li class="py-3">10% Daily</li>
-                        <li class="py-3">30 days</li>
-                        <li class="py-3">24/7 Customer Support</li>
+                        <li class="py-1">Minimum: $20,001</li>
+                        <li class="py-2">Maximum: $100,000</li>
+                        <li class="py-1">Minimum ROI: 10% daily</li>
+                        <li class="py-2">Duration: 30days</li>
+                        <li class="py-1">Referral Commision: 10%</li>
+
 
                        <div class="mt-14"> <link-btn-fa  link="/auth/register" >Get Started</link-btn-fa></div>
                     </ul>
@@ -109,9 +108,12 @@
                        &gt; $100,000
                     </p>
                     <ul role="list" class="text-center">
-                        <li class="py-3">12% Daily</li>
-                        <li class="py-3">90 days</li>
-                        <li class="py-3">24/7 Customer Support</li>
+                        <li class="py-1">Minimum: $100,001</li>
+                        <!-- <li class="py-2">Maximum: $20,000</li> -->
+                        <li class="py-1">Minimum ROI: 12% daily</li>
+                        <li class="py-2">Duration: 90days</li>
+                        <li class="py-1">Referral Commision: 10%</li>
+
 
                        <div class="mt-14"> <link-btn-fa link="/auth/register" >Get Started</link-btn-fa></div>
                     </ul>
