@@ -11,13 +11,13 @@ onMounted(() => {
         <video src="~/assets/media/video4.mp4" autoplay loop class="h-full w-full object-cover">
         </video>
         <div class="absolute z-30 sm:left-10 md:left-20 bottom-[30%] max-w-sm sm:max-w-md md:max-w-lg w-full ps-2">
-            <h2 class="text-2xl text-white">Comprehensive financial advice and investment services that are tailored to meet
+            <h2 class="text-2xl text-white animate__animated animate__slideInLeft">Comprehensive financial advice and investment services that are tailored to meet
                 your individual needs.</h2>
             <div class="flex flex-col md:flex-row md:gap-5 gap-y-2 mt-3 sm:flex-row flex-column">
-                <div class="w-fit">
+                <div class="w-fit animate__animated animate__slideInLeft">
                     <link-btn-fa link="auth/register/">Start membership</link-btn-fa>
                 </div>
-                <div class="w-fit">
+                <div class="w-fit animate__animated animate__slideInRight">
                     <link-btn-fa link="auth/login">Login</link-btn-fa>
                 </div>
             </div>
