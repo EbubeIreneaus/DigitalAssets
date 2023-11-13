@@ -2,8 +2,7 @@
 
 <template>
     <section
-        class="relative text-green-100  bg-[url('~/assets/media/review-bg.jpg')] bg-cover bg-center before:absolute before:w-full before:h-full before:top-0
-         before:left-0 before:bg-slate-950/90">
+        class="relative">
 
         <div class="py-10 z-40">
             <h2
@@ -14,14 +13,14 @@
 
             <div class="flex lg:flex-row flex-wrap gap-5 mt-10 justify-center py-14 px-5 ">
                 <div class="flex flex-col gap-2 shadow-md items-center px-5 py-5 basis-[350px] grow z-40">
-                    <h2 class=" text-2xl text-green-200 font-bold">Choose a Package</h2>
+                    <h2 class=" text-2xl  font-bold">Choose a Package</h2>
                     <p class="text-center">
                         You can choose from our robust packages that have been tailored to suit your quest.
                         No hidden Charges, what you see is what you get. Upgrades are also inclusive.
                     </p>
                 </div>
                 <div class="flex flex-col gap-2 shadow-md items-center  px-5 py-5 basis-[350px] grow z-40">
-                    <h2 class=" text-2xl text-green-200 font-bold">Deposit Funds</h2>
+                    <h2 class=" text-2xl  font-bold">Deposit Funds</h2>
                     <p class="text-center font-semibold">
                         Choose from Paypal and all the Money Order (Netteler, Skrill, Master Card) to Bitcoin and
                         effortlessly fund your account.
@@ -29,7 +28,7 @@
                 </div>
 
                 <div class="flex flex-col gap-2 shadow-md items-center  px-5 py-5 basis-[350px] grow z-40">
-                    <h2 class=" text-2xl text-green-200 font-bold">Withdraw Profits</h2>
+                    <h2 class=" text-2xl  font-bold">Withdraw Profits</h2>
                     <p class="text-center font-semibold">
                         With Quick and Fast Withdrawals, you can be sure to receive your profit into your desired channel of
                         withdrawal within 5 business working days.
@@ -42,8 +41,8 @@
                 Choose Package
             </h2>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 place-items-center  gap-y-7 gap-x-5 relative px-5 w-fit mx-auto">
-                <div class="flex flex-col gap-5 shadow-sm items-center shadow-slate-300 px-5  py-7">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 place-items-center  gap-y-7 gap-x-5 relative px-5 ">
+                <div class="flex flex-col gap-5 shadow-lg items-center shadow-slate-300 px-5  py-7 w-full">
                     <h2
                         class=" text-3xl text-center font-extrabold">Standard</h2>
                     <ul role="list" class="text-center">
@@ -57,7 +56,7 @@
                     </ul>
                 </div>
 
-                <div class="flex flex-col gap-5 shadow-sm items-center shadow-slate-300 px-5  py-7">
+                <div class="flex flex-col gap-5 shadow-lg items-center shadow-slate-300 px-5  py-7 w-full">
                     <h2
                         class=" text-3xl text-center font-extrabold"> Silver</h2>
                 
@@ -87,7 +86,7 @@
                     </ul>
                 </div>  -->
 
-                   <div class="flex flex-col gap-5 shadow-sm items-center shadow-slate-300 px-5  py-7">
+                   <div class="flex flex-col gap-5 shadow-lg items-center shadow-slate-300 px-5  py-7 w-full">
                     <h2
                         class=" text-3xl text-center  font-extrabold">Premuim</h2>
                     <ul role="list" class="text-center">
@@ -101,7 +100,7 @@
                        <div class="mt-14"> <link-btn-fa  link="/auth/register" >Get Started</link-btn-fa></div>
                     </ul>
                 </div>  
-                <div class="flex flex-col gap-5 shadow-sm items-center shadow-slate-300 px-5  py-7">
+                <div class="flex flex-col gap-5 shadow-lg items-center shadow-slate-300 px-5  py-7 w-full">
                     <h2
                         class=" text-3xl text-center font-extrabold">Ultra</h2>
                     <p class="text-center font-serif font-semibold text-xl">
