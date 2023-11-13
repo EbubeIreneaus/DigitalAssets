@@ -43,6 +43,7 @@
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 place-items-center  gap-y-7 gap-x-5 relative px-5 ">
                 <div class="flex flex-col gap-5 shadow-lg items-center shadow-slate-300 px-5  py-7 w-full">
+                <div><i class="fa fa-shield text-[70px] text-green-700"></i></div>
                     <h2
                         class=" text-3xl text-center font-extrabold">Standard</h2>
                     <ul role="list" class="text-center">
@@ -57,6 +58,7 @@
                 </div>
 
                 <div class="flex flex-col gap-5 shadow-lg items-center shadow-slate-300 px-5  py-7 w-full">
+                    <div><i class="fa fa-pencil-square text-[70px] text-green-700"></i></div>
                     <h2
                         class=" text-3xl text-center font-extrabold"> Silver</h2>
                 
@@ -87,6 +89,7 @@
                 </div>  -->
 
                    <div class="flex flex-col gap-5 shadow-lg items-center shadow-slate-300 px-5  py-7 w-full">
+                    <div><i class="fa fa-lock text-[70px] text-green-700"></i></div>
                     <h2
                         class=" text-3xl text-center  font-extrabold">Premuim</h2>
                     <ul role="list" class="text-center">
@@ -101,6 +104,7 @@
                     </ul>
                 </div>  
                 <div class="flex flex-col gap-5 shadow-lg items-center shadow-slate-300 px-5  py-7 w-full">
+                    <div><i class="fa fa-bar-chart text-[70px] text-green-700"></i></div>
                     <h2
                         class=" text-3xl text-center font-extrabold">Ultra</h2>
                     <p class="text-center font-serif font-semibold text-xl">
