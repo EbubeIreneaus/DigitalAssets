@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       script: [
         { src: "https://s3.tradingview.com/tv.js", tagPosition: 'head' },
         {
-          // src: "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js",
+          src: "/main.js",
           // tagPosition: 'head',
           // async: 'true'
         },
