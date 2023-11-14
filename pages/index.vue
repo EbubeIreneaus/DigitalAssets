@@ -30,7 +30,7 @@ onMounted(() => {
                 <i class="fa fa-user fa-2xl text-green-800"></i>
                 <div>
                     <h2 class="text-2xl font-semibold">Explore With Us</h2>
-                    <p>First you need to become a member of Asset Growth by registering.</p>
+                    <p>First you need to become a member of Digital Assets by registering.</p>
                 </div>
             </div>
 

@@ -226,6 +226,8 @@ const confirm_payment = async (e) =>{
     alert("We could not confirm your payment at the moment, try reaching us via email or send a DM via contact page!!")
     
 }
+
+
 </script>
 
 <style lang="scss" scoped></style>

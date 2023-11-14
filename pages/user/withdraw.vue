@@ -53,7 +53,8 @@ const initiate = async (e) => {
         alert("could not initiate this transaction at this moment try again later!!!");
         sbutton.disabled = false;
     }
-};
+}
+
 </script>
 
 <template>

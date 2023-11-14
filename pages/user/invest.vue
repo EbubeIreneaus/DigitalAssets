@@ -145,6 +145,7 @@ const initiate = async (e) => {
 
 }
 
+
 </script>
 
 <template>
@@ -295,7 +296,7 @@ const initiate = async (e) => {
                 </div>
             </div>
         </div>
-        <modal :visible="invest_success">
+        <modal :visible="invest_success" >
             <div>
                 <div class="flex gap-5 items-center ">
                     <img src="~/assets/media/successful.png" alt="" class="w-14 h-14 object-cover">
@@ -323,4 +324,5 @@ const initiate = async (e) => {
     opacity: 1 !important;
     display: block;
 }
+
 </style>
