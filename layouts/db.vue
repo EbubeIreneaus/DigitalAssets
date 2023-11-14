@@ -6,8 +6,8 @@ const account = ref(null)
 provide('profileId', profileId)
 
 
-// const url = 'https://digital-assets-b.vercel.app/'
-const url = "http://127.0.0.1:8000/"
+const url = 'https://digital-assets-b.vercel.app/'
+// const url = "http://127.0.0.1:8000/"
 
 provide('url', url)
 
@@ -34,7 +34,7 @@ const nav = ref([
     { title: "buy plan", link: "/user/invest", icon:'fa-solid fa-money-bill-trend-up' },
     { title: "withdraw", link: "/user/withdraw", icon:"fa-solid fa-circle-arrow-up" },
     { title: "account", link: "/user/account", icon:"fa-solid fa-address-card"},
-    { title: "referral", link: "", icon:"fa-solid fa-down-left-and-up-right-to-center"},
+    { title: "referral", link: "/user/referral", icon:"fa-solid fa-down-left-and-up-right-to-center"},
     { title: "contact us", link: "/user/contact", icon: 'fa-solid fa-phone' },
     { title: "logout", link: "/auth/logout", icon:"fa-solid fa-right-from-bracket"},
 ])
