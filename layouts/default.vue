@@ -1,11 +1,4 @@
 <script setup>
-useHead({
-    script: [
-        {
-          
-        }
-    ]
-})
 
 
 const year = new Date().getFullYear()
@@ -80,7 +73,7 @@ onMounted(() => {
         <footer class="relative bg-black text-green-700 pt-8 pb-6">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap text-left lg:text-left">
-                    <div class="w-full lg:w-4/12 px-4">
+                    <div class="w-full lg:w-4/12 px-4 mb-5">
                         <h4 class="text-3xl fonat-semibold text-green-500 my-1">Digital Assets</h4>
                         <h5 class="text-sm mt-2 mb-4 text-blueGray-600 ">
                             We utilize our experience and deep network to provide exposure to various
@@ -89,7 +82,7 @@ onMounted(() => {
                             is conflict-free, as we are not compensated by the investors team leaders in
                             our program.
                         </h5>
-
+                        <google-translate></google-translate>
                     </div>
                     <div class="w-full lg:w-6/12 px-4 ">
                         <div class="flex flex-wrap items-top mb-6 mt-1 gap-4">
@@ -163,6 +156,9 @@ onMounted(() => {
 </template>
 
 
-<style lang="scss" scoped>.router-link-active {
+<style lang="scss" scoped>
+.router-link-active {
     color: rgb(134 239 17);
-}</style>
+}
+
+</style>

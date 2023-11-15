@@ -63,7 +63,7 @@ const initiate = async (e) => {
         <div class="h-max py-2 w-full">
             <section class="">
                 <div class="flex items-center justify-center  mx-auto  mt-10">
-                    <div class="w-full rounded-lg md:mt-0 w-full xl:p-0 px-4 py-8 shadow-lg max-w-2xl">
+                    <div class="w-full rounded-lg md:mt-0  xl:p-0 px-4 py-8 shadow-lg max-w-2xl">
                         <div class="space-y-4 md:space-y-6 sm:p-8">
                             <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl">
                                 Withdraw Funds

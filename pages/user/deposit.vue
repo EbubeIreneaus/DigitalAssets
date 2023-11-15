@@ -96,7 +96,7 @@
         <alert :visible="copied_success">copied to clipboard
             <i class="fas fa-check-circle "></i>
         </alert>
-
+       
     </div>
 </template>
 
