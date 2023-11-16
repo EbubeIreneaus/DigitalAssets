@@ -105,8 +105,8 @@ onMounted(() => {
             <div class="h-36 shadow-md rounded-xl">
                 <div class="flex h-full items-center justify-between mx-5">
                     <div>
-                        <h2 class="text-2xl">{{ format_amount(account.pending_withdraw) }}</h2>
-                        <p>pending withdrawal</p>
+                        <h2 class="text-2xl">{{ format_amount(account.referral_bonus) }}</h2>
+                        <p>bonus</p>
                     </div>
                     <div class="px-3 mb-5 py-2 bg-black rounded-md align-top">
                         <i class="fa fa-long-arrow-right rotate-45 text-red-500" aria-hidden="true"></i>
@@ -207,7 +207,7 @@ onMounted(() => {
                             <td class="px-4  border-b" v-if="tx.status == 'pending'">
                                 <span class="w-fit border px-5 py-1 rounded-md text-sm border-red-300 text-red-500">pending</span>
                             </td>
-                            <td class="px-4 bg-green-600/50 text-green-400 border-b" v-if="tx.status == 'approved'">
+                            <td class="px-4  text-green-400 border-b" v-if="tx.status == 'approved'">
                                 <span class="w-fit border px-5 py-1 rounded-md text-sm border-yellow-300 text-yellow-500">approved</span>
                             </td>
                             <td class="px-4 bg-red-600/50 text-red-400 border-b" v-if="tx.status == 'completed'">
