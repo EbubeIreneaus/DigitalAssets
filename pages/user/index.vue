@@ -154,26 +154,26 @@ onMounted(() => {
 
                     </div>
                     <p>
-                        <a href="https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=2bfcbbbbbf2cedbc44c4ea4602e3c148&amp;service=copy_link&amp;title=GoldenWealths&amp;link=https://goldenwealths.com/user/register/?ref=608fbea8d46c43f8f4a61f85a3c331dd"
+                        <a :href="'https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=833959d5dc1e891b01eaf8c799cc1602&amp;service=copy_link&amp;title=DigitalAssets&amp;link=https://digitalassetsgrowth.com/auth/register/'+account.profile.id"
                             target="_blank">
                             <i class=" m-1 fa fa-copy w3-border w3-round-large  w3-hover-blue p-1"></i>
                         </a>
-                        <a href="https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=2bfcbbbbbf2cedbc44c4ea4602e3c148&amp;service=facebook&amp;title=GoldenWealths&amp;link=https://goldenwealths.com/user/register/?ref=608fbea8d46c43f8f4a61f85a3c331dd"
+                        <a :href="'https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=833959d5dc1e891b01eaf8c799cc1602&amp;service=facebook&amp;title=DigitalAssets&amp;link=https://digitalassetsgrowth.com/auth/register/'+account.profile.id"
                             target="_blank">
                             <i
                                 class="fa-brands fa-facebook material-icon m-1  w3-border w3-round-large  w3-hover-blue p-1"></i>
                         </a>
-                        <a href="https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=2bfcbbbbbf2cedbc44c4ea4602e3c148&amp;service=whatsapp&amp;title=GoldenWealths&amp;link=https://goldenwealths.com/user/register/?ref=608fbea8d46c43f8f4a61f85a3c331dd"
+                        <a :href="'https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=833959d5dc1e891b01eaf8c799cc1602&amp;service=whatsapp&amp;title=DigitalAssets&amp;link=https://digitalassetsgrowth.com/auth/register/'+account.profile.id"
                             target="_blank">
                             <i
                                 class="fa-brands fa-whatsapp material-icon m-1 w3-border w3-round-large  w3-hover-blue p-1"></i>
                         </a>
-                        <a href="https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=2bfcbbbbbf2cedbc44c4ea4602e3c148&amp;service=telegram&amp;title=GoldenWealths&amp;link=https://goldenwealths.com/user/register/?ref=608fbea8d46c43f8f4a61f85a3c331dd"
+                        <a :href="'https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=833959d5dc1e891b01eaf8c799cc1602&amp;service=telegram&amp;title=DigitalAssets&amp;link=https://digitalassetsgrowth.com/auth/register/'+account.profile.id"
                             target="_blank">
                             <i
                                 class="fa-brands fa-telegram m-1 material-icon w3-border w3-round-large w3-hover-blue p-1"></i>
                         </a>
-                        <a href="https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=2bfcbbbbbf2cedbc44c4ea4602e3c148&amp;service=twitter&amp;title=GoldenWealths&amp;link=https://goldenwealths.com/user/register/?ref=608fbea8d46c43f8f4a61f85a3c331dd"
+                        <a :href="'https://www.shareaholic.com/api/share/?v=1&amp;apitype=1&amp;apikey=833959d5dc1e891b01eaf8c799cc1602&amp;service=twitter&amp;title=DigitalAssets&amp;link=https://digitalassetsgrowth.com/auth/register/'+account.profile.id"
                             target="_blank">
                             <i
                                 class="fa-brands fa-twitter material-icon m-1 w3-border w3-round-large w3-hover-blue p-1"></i>
