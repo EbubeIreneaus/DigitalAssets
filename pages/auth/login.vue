@@ -35,7 +35,7 @@ const Login = async (e) => {
     } else {
       Cookies.set('profileId', res.data.value.profileId)
     }
-    useRouter().push('/auth/verify/')
+    useRouter().push('/user/')
   }else{
     alert("User Not Found!!!");
     submit_btn.disabled = false;
