@@ -77,7 +77,7 @@ onMounted(() => {
 
 <template>
     <div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 py-10 gap-5">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 py-10 gap-5">
             <div class=" shadow-md h-36 rounded-xl">
                 <div class="flex h-full items-center justify-between mx-5">
                     <div>
@@ -105,15 +105,25 @@ onMounted(() => {
             <div class="h-36 shadow-md rounded-xl">
                 <div class="flex h-full items-center justify-between mx-5">
                     <div>
-                        <h2 class="text-2xl">{{ format_amount(account.referral_bonus) }}</h2>
-                        <p>bonus</p>
+                        <h2 class="text-2xl">{{ format_amount(account.bonus) }}</h2>
+                        <p>Bonus</p>
                     </div>
                     <div class="px-3 mb-5 py-2 bg-black rounded-md align-top">
-                        <i class="fa fa-long-arrow-right rotate-45 text-red-500" aria-hidden="true"></i>
+                        <i class="fa fa-long-arrow-right rotate-45 text-green-500" aria-hidden="true"></i>
                     </div>
                 </div>
             </div>
-
+            <div class="h-36 shadow-md rounded-xl">
+                <div class="flex h-full items-center justify-between mx-5">
+                    <div>
+                        <h2 class="text-2xl">{{ format_amount(account.referral_bonus) }}</h2>
+                        <p>Referral Bonus</p>
+                    </div>
+                    <div class="px-3 mb-5 py-2 bg-black rounded-md align-top">
+                        <i class="fa fa-long-arrow-right -rotate-45 text-red-500" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
             <div class="h-36 shadow-md rounded-xl">
                 <div class="flex h-full items-center justify-between mx-5">
                     <div>
@@ -143,7 +153,7 @@ onMounted(() => {
                 <div class="card p-3 text-center">
                     <div>
                         <h5 class="font-extrabold text-xl">Invite &amp; Earn</h5>
-                        <p class="earn-text">Earn up to $20.00 for each friend that verifies his/her account
+                        <p class="earn-text">Earn up to 10% for each friend that deposit into his/her account
 
                         </p>
                     </div>
