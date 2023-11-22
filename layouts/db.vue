@@ -30,11 +30,8 @@ const getAccount = async () => {
 
 
     const res = await Axios.get(`${url}account/details/${profileId}`)
-    if (res.data.profile.verified) {
+    if (res.data.profile) {
         account.value = res.data
-    }
-    else {
-        useRouter().push('/auth/verify/')
     }
 
 }
