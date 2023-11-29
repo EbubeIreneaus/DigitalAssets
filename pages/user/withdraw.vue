@@ -72,7 +72,7 @@ const initiate = async (e) => {
                                 <div class="flex gap-2 md:flex-row flex-col">
                                     <div class="w-full">
                                         <label for="amount" class="block mb-1 text-sm font-medium">Amount(USD)</label>
-                                        <input type="number" min="100" v-model="form.amount" placeholder="100"
+                                        <input type="number"  v-model="form.amount" placeholder="100"
                                             class="!appearance-none w-full py-2 px-3 font-mono border 
                                             outline-none out-of-range:ring-1 out-of-range:ring-red-500" />
                                     </div>
