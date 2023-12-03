@@ -29,13 +29,14 @@ const Login = async (e) => {
       Cookies.set('profileId', res.data.value.profileId)
     }
     useRouter().push("/user/");
+
   } else if(res.data.value.status == "unverified"){
     if (remember_me.value) {
       Cookies.set('profileId', res.data.value.profileId, { expires: 30 })
     } else {
       Cookies.set('profileId', res.data.value.profileId)
     }
-    useRouter().push('/user/')
+    useRouter().push('/auth/verify/')
   }else{
     alert("User Not Found!!!");
     submit_btn.disabled = false;
