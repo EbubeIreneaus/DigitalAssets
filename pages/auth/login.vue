@@ -78,7 +78,7 @@ const Login = async (e) => {
                       <label for="remember" class="">Remember me</label>
                     </div>
                   </div>
-                  <NuxtLink to="/auth/fgpass" class="text-sm font-medium text-primary-hover hover:text-violet-300">Forgot password?</NuxtLink>
+                  <NuxtLink to="/auth/fgpass" class="text-sm font-medium hover:text-green-700">Forgot password?</NuxtLink>
                 </div>
 
                 <div class="my-5 text-center">
