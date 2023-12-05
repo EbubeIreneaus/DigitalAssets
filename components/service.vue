@@ -32,7 +32,7 @@
                  ">Binary Options</h2>
               <p class="text-center ">
                 We offer a top notch assistance in helping our clients trade and make suitable profits through ..
-              </p><nuxt-link to="/service/binary" class="text-green-700 font-semibold underline 
+              </p><nuxt-link to="" class="text-green-700 font-semibold underline 
               underline-offset-3">read more</nuxt-link>
             </div>
 
@@ -42,7 +42,7 @@
                 <h2 class=" text-3xl font-bold text-center">Cryptocurrencies</h2>
               <p class="text-center ">
                 Cryptocurrencies are sets of software protocols for generating digital tokens and for tracking.
-              </p><nuxt-link to="/service/crypto" class="text-green-700 font-semibold underline 
+              </p><nuxt-link to="/services/crypto" class="text-green-700 font-semibold underline 
               underline-offset-3">read more</nuxt-link>
             </div>
 
@@ -59,7 +59,7 @@
                 <h2 class=" text-3xl font-bold text-center ">Gold</h2>
               <p class="text-center ">
                 Investing in precious metals comes with some certain benefits over investing in stocks, such as being a hedge against inflation,
-              </p><nuxt-link to="/service/gold" class="text-green-700 font-semibold underline 
+              </p><nuxt-link to="/services/gold" class="text-green-700 font-semibold underline 
               underline-offset-3">read more</nuxt-link>
             </div>
 

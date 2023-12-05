@@ -49,7 +49,7 @@
             </div>
         </div>
 
-        <div class="h-[200vh] md:h-[150vh] bg-slate-200 border w-full relative">
+        <div class="h-[250vh] md:h-[150vh] bg-slate-200 border w-full relative">
             <div class="w-[80%] h-full bg-slate-700 border"></div>
 
             <div class=" absolute left-0 top-0 w-full h-full flex justify-center items-center">
