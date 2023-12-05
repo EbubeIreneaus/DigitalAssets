@@ -22,7 +22,7 @@
               <p class="text-center ">
                 Forex is one of those areas that most people feel is complicated. In reality, it's like many
                  other forms of investment where a little knowledge can be dangerous.
-              </p><nuxt-link to="/service/forex" class="text-green-700 font-semibold underline 
+              </p><nuxt-link to="/services/forex" class="text-green-700 font-semibold underline 
               underline-offset-3">read more</nuxt-link>
             </div>
 
@@ -51,7 +51,7 @@
                 <h2 class=" text-3xl font-bold text-center ">Real Estate</h2>
               <p class="text-center ">
                 Real estate trading is the wild side of real estate investment. Like day traders, who
-              </p><nuxt-link to="/service/estate" class="text-green-700 font-semibold underline 
+              </p><nuxt-link to="/services/realestate" class="text-green-700 font-semibold underline 
               underline-offset-3">read more</nuxt-link>
             </div>
             <div class="flex flex-col gap-3 shadow-md items-center shadow-primary-hover px-5  py-7">
