@@ -32,7 +32,7 @@
                  ">Binary Options</h2>
               <p class="text-center ">
                 We offer a top notch assistance in helping our clients trade and make suitable profits through ..
-              </p><nuxt-link to="" class="text-green-700 font-semibold underline 
+              </p><nuxt-link to="/services/crypto" class="text-green-700 font-semibold underline 
               underline-offset-3">read more</nuxt-link>
             </div>
 
@@ -68,7 +68,7 @@
                 <h2 class=" text-3xl font-bold text-center ">Retirements</h2>
               <p class="text-center ">
                 Our software automatically rebalances your investments and handles all the trades to save your time and help maximize your returns. 
-              </p><nuxt-link to="/service/retirement" class="text-green-700 font-semibold underline 
+              </p><nuxt-link to="/services/retirement" class="text-green-700 font-semibold underline 
               underline-offset-3">read more</nuxt-link>
             </div>
 
