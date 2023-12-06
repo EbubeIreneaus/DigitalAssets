@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="w-full py-7">
-                    <img src="~/assets/media/service-forex.jpg" alt="" class="w-full object-cover h-full">
+                    <img src="~/assets/media/service-forex.png" alt="" class="w-full object-cover h-full">
                 </div>
 
             </div>
