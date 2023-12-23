@@ -39,7 +39,7 @@ onMounted(() => {
 </script>
 <template>
     <div class="">
-        <header class="fixed !bg-transparent z-50 w-full transition-all duration-300">
+        <header class="fixed bg-transparent z-50 w-full transition-all duration-300">
             <div class="h-20 flex items-center justify-between px-5 relative ">
                 <div class="!w-fit">
                    <logo></logo>
