@@ -2,7 +2,7 @@
     <div>
         <NuxtLayout>
             <NuxtLoadingIndicator />
-            <NuxtPage api="http://127.0.0.1:8000/" :page-key="route => route.fullPath" /> <!-- https://digital-assets-b.vercel.app/ -->
+            <NuxtPage api="https://digital-assets-b.vercel.app/" :page-key="route => route.fullPath" /> <!-- https://digital-assets-b.vercel.app/ -->
         </NuxtLayout>
     </div>
 </template>
