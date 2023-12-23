@@ -45,7 +45,7 @@ onMounted(() => {
                    <logo></logo>
                 </div>
                 <div>
-                    <button class="btn p-3 lg:hidden rounded-lg ring-1" @click="toogleNav">
+                    <button class="btn p-3 lg:hidden rounded-lg ring-1 ring-orange-500" @click="toogleNav">
                         <i class="fa fa-bars text-white"></i></button>
                 </div>
                 <nav
