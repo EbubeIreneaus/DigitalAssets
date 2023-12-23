@@ -27,7 +27,7 @@ AOS.refreshHard()
                 <img src="~/assets/media/about.jpg" alt="" class="h-full w-full object-cover object-center"  data-aos="fade-right"/>
                 <div class="" data-aos="fade-left">
                     <h2 data-aos="fade-up"
-                        class="text-4xl font-extrabold mb-5 tracking-wider relative py-5 before:absolute before:border before:w-24 before:bottom-0 before:border-primary-hover text-center">
+                        class=" text-orange-600 text-4xl font-extrabold mb-5 tracking-wider relative py-5 before:absolute before:border before:w-24 before:bottom-0 before:border-primary-hover text-center">
                         Welcome to Digital Assets
                     </h2>
                     <p data-aos="fade-up">
@@ -35,7 +35,7 @@ AOS.refreshHard()
                         investments with confidence and ease. Our platform is designed to provide you with a secure and
                         efficient way to grow your wealth through strategic digital asset management.
                     </p>
-                    <h2 class="text-2xl my-5 font-bold" data-aos="fade-down">
+                    <h2 class="text-2xl my-5 font-bold text-orange-600" data-aos="fade-down">
                         Who We Are
                     </h2>
                     <p data-aos="fade-up">
@@ -45,7 +45,7 @@ AOS.refreshHard()
                         individuals
                         and businesses to make informed decisions in the ever-evolving landscape of digital assets.
                     </p>
-                    <h2 class="text-2xl my-5 font-bold" data-aos="fade-down">
+                    <h2 class="text-2xl my-5 font-bold text-orange-600" data-aos="fade-down">
                         Our Mission
                     </h2>
                     <p data-aos="fade-up">
@@ -54,7 +54,7 @@ AOS.refreshHard()
                         user-centric services, ensuring that our clients have the necessary tools and resources to achieve
                         their financial goals.
                     </p>
-                    <h2 class="text-2xl my-5 font-bold" data-aos="fade-down">
+                    <h2 class="text-2xl my-5 font-bold text-orange-600" data-aos="fade-down">
                         Our Commitment to Security
                     </h2>
                     <p data-aos="fade-up">

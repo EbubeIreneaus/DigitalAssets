@@ -1,8 +1,8 @@
 <template>
     <div class="mt-5">
         <div class="text-center py-32 border overflow-hidden w-fit h-fit">
-            <p class="uppercase">why Choose us</p>
-            <h1 class="text-4xl font-bold" data-aos="fade-right">Portfolio Management Tools</h1>
+            <p class="uppercase text-orange-600">why Choose us</p>
+            <h1 class="text-4xl font-bold text-orange-600" data-aos="fade-right">Portfolio Management Tools</h1>
             <p class="max-w-[700px] mx-auto my-5 font-semibold" data-aos="fade-right">
                 Benefit from our proprietary portfolio management tools that include alternative investment
                 analytics, portfolio optimization technology and rebalancing software designed to help you
@@ -12,7 +12,7 @@
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-y-12 mt-10 border overflow-hidden">
                 <div class="text-center" data-aos="fade-right">
                     <div class="p-5  w-fit mx-auto rounded-full border bg-slate-200/70">
-                        <i class="fas fa-shield-alt text-4xl "></i>
+                        <i class="fas fa-shield-alt text-4xl text-orange-700 "></i>
                     </div>
 
                     <h2 class="text-2xl font-semibold px-7">PCT (portfolio construct technology)</h2>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="text-center" data-aos="fade-down">
                     <div class="p-5  w-fit mx-auto rounded-full border bg-slate-200/70">
-                        <i class="fa fa-pencil-square text-4xl "></i>
+                        <i class="fa fa-pencil-square text-4xl text-orange-700"></i>
                     </div>
 
                     <h2 class="text-2xl font-semibold px-7">POT (portfolio optimization technology)</h2>
@@ -35,7 +35,7 @@
 
                 <div class="text-center" data-aos="fade-down">
                     <div class="p-5  w-fit mx-auto rounded-full border bg-slate-200/70">
-                        <i class="fas fa-lock text-4xl "></i>
+                        <i class="fas fa-lock text-4xl text-orange-700"></i>
                     </div>
 
                     <h2 class="text-2xl font-semibold px-7">Ongoing portfolio monitoring and rebalancing tools</h2>
@@ -47,7 +47,7 @@
 
                 <div class="text-center" data-aos="fade-left">
                     <div class="p-5 w-fit mx-auto rounded-full border bg-slate-200/70">
-                        <i class="fa fa-bar-chart text-4xl"></i>
+                        <i class="fa fa-bar-chart text-4xl text-orange-700"></i>
                     </div>
 
                     <h2 class="text-2xl font-semibold px-7">QIA (Quantitative Investment Analytics)</h2>
@@ -64,8 +64,8 @@
         </div>
         <div class="flex justify-center shadow-lg ">
         <div class="text-center max-w-3xl p-10 mx-auto absolute -mt-20 bg-slate-200" data-aos="fade-up">
-            <p class="text-xl font-semibold">overview</p>
-            <h2 class="text-4xl font-bold my-5">7 Years of experience</h2>
+            <p class="text-xl font-semibold text-orange-600">overview</p>
+            <h2 class="text-4xl font-bold my-5 text-orange-600">7 Years of experience</h2>
             <p class="text-left px-3 sm:px-px">Digital Assets operates as an international digital investment management platform. Our Company offers access
                 to multiple, automated, algorithm driven financial services, investment solutions, diversified alternative
                 investments, portfolio management, financial planning, and advisory services.

@@ -28,7 +28,7 @@ AOS.refreshHard()
     <div>
         <div class="flex flex-col lg:flex-row gap-x-5 gap-y-8 mt-5 px-5 overflow-hidden">
             <div class="flex items-center gap-7 py-10 px-5 shadow-md" data-aos="fade-right">
-                <i class="fa fa-user fa-2xl "></i>
+                <i class="fa fa-user fa-2xl text-orange-700"></i>
                 <div>
                     <h2 class="text-2xl font-semibold">Explore With Us</h2>
                     <p>First you need to become a member of Digital Assets by registering.</p>
@@ -36,14 +36,14 @@ AOS.refreshHard()
             </div>
 
             <div class="flex items-center gap-7 px-5 py-10 shadow-md" data-aos="fade-up"> 
-                <i class="fa fa-pie-chart fa-2xl"></i>
+                <i class="fa fa-pie-chart fa-2xl text-orange-700"></i>
                 <div>
                     <h2 class="text-2xl font-semibold">Choose your Plan, Create a Joint Plan</h2>
                     <p>Select any of our unique financial earning plans that best works for you.</p>
                 </div>
             </div>
             <div class="flex items-center gap-7 px-5 py-10 shadow-md" data-aos="fade-left">
-                <i class="fas fa-money-bill fa-2xl"></i>
+                <i class="fas fa-money-bill fa-2xl text-orange-700"></i>
                 <div>
                     <h2 class="text-2xl font-semibold">Earn Passively and Compounding</h2>
                     <p>Start earning passively and get paid immediately you request for a withdrawal.</p>

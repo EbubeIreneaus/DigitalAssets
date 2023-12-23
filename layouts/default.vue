@@ -28,9 +28,9 @@ const close_small_nav = () =>{
 const changeNavBgColor = () => {
     const header = document.getElementsByTagName('header')[0]
     if (window.scrollY >= 200) {
-        header.classList.add("!bg-black")
+        header.classList.add("!bg-slate-900")
     } else {
-        header.classList.remove("!bg-black")
+        header.classList.remove("!bg-slate-900")
     }
 }
 onMounted(() => {
@@ -53,15 +53,15 @@ onMounted(() => {
                     lg:h-full absolute lg:relative left-0 top-20 lg:top-0 w-full  z-40 lg:z-50 bg-black/90 lg:bg-transparent text-green-700 ">
                     <ul class=" flex flex-col  lg:flex-row items-left lg:items-center w-full lg:w-fit py-6 lg:py-0 text-white">
                         <NuxtLink :to="x.link" v-for="x, index in navLinks" @click="close_small_nav()"
-                            class="px-5 hover:text-green-700 font-semibold py-2.5 lg:py-0">
+                            class="px-5 hover:text-slate-500 font-semibold py-2.5 lg:py-0">
                             <li class="">{{ x.title }}</li>
                         </NuxtLink>
                     </ul>
                 </nav>
                 <div class="flex-shrink-0 hidden sm:block ">
                     <nuxt-link to="/auth/login"
-                        class="px-12 py-4 ring-1 ring-slate-100  text-white hover:text-slate-300 flex items-center rounded-lg bg-black ">
-                        client area <i class="fa fa-arrow-right mt-px ms-px"></i></nuxt-link>
+                        class="px-12 py-3 text-white hover:text-slate-300 flex items-center  bg-orange-700 ">
+                        client area &nbsp;<i class="fa fa-arrow-right mt-px ms-px"></i></nuxt-link>
                 </div>
             </div>
     </header>
@@ -158,7 +158,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .router-link-active {
-    color: rgb(134 239 17);
+    color: rgba(194, 65, 12, 1);
 }
 
 </style>

@@ -56,7 +56,7 @@ const Login = async (e) => {
                   <p class="text-sm text-center font-semibold font-serif">
                     Don't have an account yet?
                     <NuxtLink to="/auth/register"
-                      class="text-primary-600 text-green-500 hover:text-green-700 font-bold font-sans">
+                      class="text-primary-600 text-orange-600 hover:text-orange-400 font-bold font-sans">
                      Register</NuxtLink>
                   </p>
                 </div>
