@@ -5,9 +5,7 @@
 </template>
 
 <script setup>
-const url = 'https://digital-assets-b.vercel.app/'
-// const url = "http://127.0.0.1:8000/"
-provide('url', url)
+// const url = 'https://digital-assets-b.vercel.app/'
 </script>
 
 <style lang="scss" scoped>

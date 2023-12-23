@@ -27,7 +27,7 @@ const close_small_nav = () =>{
 }
 const changeNavBgColor = () => {
     const header = document.getElementsByTagName('header')[0]
-    if (window.scrollY >= 300) {
+    if (window.scrollY >= 200) {
         header.classList.add("!bg-black")
     } else {
         header.classList.remove("!bg-black")
@@ -38,14 +38,14 @@ onMounted(() => {
 })
 </script>
 <template>
-    <div class="text-black">
-        <header class="fixed bg-transparent z-50 w-full transition-all duration-300">
+    <div class="">
+        <header class="fixed !bg-transparent z-50 w-full transition-all duration-300">
             <div class="h-20 flex items-center justify-between px-5 relative ">
                 <div class="!w-fit">
                    <logo></logo>
                 </div>
                 <div>
-                    <button class="btn p-3 lg:hidden rounded-lg ring-1 ring-green-700" @click="toogleNav">
+                    <button class="btn p-3 lg:hidden rounded-lg ring-1" @click="toogleNav">
                         <i class="fa fa-bars text-white"></i></button>
                 </div>
                 <nav
@@ -60,7 +60,7 @@ onMounted(() => {
                 </nav>
                 <div class="flex-shrink-0 hidden sm:block ">
                     <nuxt-link to="/auth/login"
-                        class="px-12 py-4 ring-1 ring-green-500   text-white hover:text-green-700 flex items-center rounded-lg bg-black text-green-700">
+                        class="px-12 py-4 ring-1 ring-slate-100  text-white hover:text-slate-300 flex items-center rounded-lg bg-black ">
                         client area <i class="fa fa-arrow-right mt-px ms-px"></i></nuxt-link>
                 </div>
             </div>
@@ -70,11 +70,11 @@ onMounted(() => {
             <slot></slot>
         </main>
 
-        <footer class="relative bg-black text-green-700 pt-8 pb-6">
+        <footer class="relative bg-black/70 dark-mode:!bg-slate-200 pt-8 pb-6 text-white">
             <div class="container mx-auto px-4">
                 <div class="flex flex-wrap text-left lg:text-left">
                     <div class="w-full lg:w-4/12 px-4 mb-5">
-                        <h4 class="text-3xl fonat-semibold text-green-500 my-1">Digital Assets</h4>
+                        <h4 class="text-3xl fonat-semibold  my-1">Digital Assets</h4>
                         <h5 class="text-sm mt-2 mb-4 text-blueGray-600 ">
                             We utilize our experience and deep network to provide exposure to various
                             direct and third-party institutional investment market opportunities for our
@@ -87,7 +87,7 @@ onMounted(() => {
                     <div class="w-full lg:w-6/12 px-4 ">
                         <div class="flex flex-wrap items-top mb-6 mt-1 gap-4">
                             <div class="w-full lg:w-4/12 px-4 ml-auto">
-                                <span class="block uppercase text-green-500 text-md font-semibold mb-2">Useful
+                                <span class="block uppercase text-white text-md font-semibold mb-2">Useful
                                     Links</span>
                                 <ul class="list-unstyled">
                                     <li>
@@ -111,7 +111,7 @@ onMounted(() => {
                             </div>
                             <div class="w-full lg:w-4/12 px-4">
                                 <span
-                                    class="block uppercase text-blueGray-500 text-md text-green-500 font-semibold mb-2">Other
+                                    class="block uppercase text-blueGray-500 text-md text-white font-semibold mb-2">Other
                                     Resources</span>
                                 <ul class="list-unstyled">
                                     <li>

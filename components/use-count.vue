@@ -41,7 +41,7 @@ onUnmounted(() => {
 <template>
     <section id="usage"
         class="relative mt-10 bg-[url('~/assets/media/logo.jpg')] bg-cover bg-center before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-slate-950/70">
-        <div class="py-5 z-40 text-green-500">
+        <div class="py-5 z-40 text-white">
             <div class="flex lg:flex-row flex-wrap gap-5 mt-10 justify-center py-14 px-5">
                 <div class="flex flex-col gap-2 shadow-md items-center px-5 py-5 basis-[350px] grow z-40">
                     <h2 class="text-4xl font-mono" id="dp">

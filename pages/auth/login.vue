@@ -1,10 +1,10 @@
 <script  setup>
 import Cookies from "js-cookie";
 definePageMeta({
-  layout:'auth'
+  layout:''
 })
-
-const url = inject("url");
+const props = defineProps(['api'])
+const url = props.api;
 const remember_me = ref(null);
 const form = reactive({
   username: "",
@@ -45,14 +45,23 @@ const Login = async (e) => {
 </script>
 
 <template>
-  <div class="flex justify-center h-screen bg-black text-green-500">
+  <div class="flex justify-center h-screen bg-slate-200">
     <br />
     <div class="h-max py-2 mt-20 w-full">
       <section class="">
-        <div class="flex items-center justify-center px-4 py-8 mx-auto sm:px-10 sm:py-0">
-          <div class="w-full rounded-lg md:mt-0 sm:max-w-md xl:p-0 px-4 py-8 shadow-lg shadow-violet-300">
-            <div class="space-y-4 md:space-y-6 sm:p-8">
-              <div class="mx-auto w-fit">
+        <div class="flex items-center justify-center px-2 py-8 mx-auto sm:px-10 sm:py-0">
+          <div class="w-full flex flex-col md:flex-row md:items-center md:justify-center md:mt-0 py-8 px-3 shadow-md shadow-black/30">
+            <div class="order-2">
+                  <img src="~/assets/media/logo.png" alt="" class=" rounded-lg object-cover object-center">
+                  <p class="text-sm text-center font-semibold font-serif">
+                    Don't have an account yet?
+                    <NuxtLink to="/auth/register"
+                      class="text-primary-600 text-green-500 hover:text-green-700 font-bold font-sans">
+                     Register</NuxtLink>
+                  </p>
+                </div>
+            <div class="space-y-4 md:space-y-6 max-w-md w-full sm:p-8">
+              <div class="mx-auto ">
                 <logo></logo>
               </div>
               <form class="space-y-4 md:space-y-6" @submit.prevent="Login">
@@ -90,12 +99,7 @@ const Login = async (e) => {
                     </button>
                 </div>
 
-                <p class="text-sm text-center font-semibold font-serif">
-                    Don't have an account yet?
-                    <NuxtLink to="/auth/register"
-                      class="text-primary-600 text-green-500 hover:text-green-700 font-bold font-sans">
-                     Register new account</NuxtLink>
-                  </p>
+              
               </form>
             </div>
           </div>

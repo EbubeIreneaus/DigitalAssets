@@ -1,10 +1,11 @@
 <script setup>
 import Cookies from "js-cookie";
 definePageMeta({
-  layout: 'auth'
+  layout: ''
 })
-
-const url = inject("url");
+const props = defineProps(['api'])
+const url = props.api;
+const plans = ['standard', 'silver', 'premium', 'ultra', 'visa']
 const cpass = ref(null);
 const countries = ref([
   { country: "Afghanistan", code: "+93" },
@@ -204,6 +205,7 @@ const countries = ref([
 ]);
 
 const form = reactive({
+  plan: 'standard',
   firstname: "",
   lastname: "",
   username: "",
@@ -292,59 +294,72 @@ const Register = async (e) => {
 </script>
 
 <template>
-  <div class="flex justify-center bg-black text-green-500">
+  <div class="flex justify-center  bg-slate-200 text-black/70">
     <div class="h-max py-2 w-full ">
       <section class="">
-        <div class="flex items-center justify-center px-4 py-8 mx-auto sm:px-10 sm:py-0">
-          <div class="w-full rounded-lg md:mt-0 xl:p-0 px-4 py-8 shadow-lg shadow-violet-300">
-            <div class="space-y-4 md:space-y-6 sm:p-8">
-              <!-- <h1 class="text-xl font-bold leading-tight tracking-tight md:text-2xl">
-                Create a new account
-              </h1> -->
-              <div class="grid md:grid-cols-2 gap-x-7 gap-y-5">
-                <div class="hidden: md:block">
-                  <img src="~/assets/media/logo.jpg" alt="" class="w-full h-full object-cover object-center rounded-lg ring">
+        <div class="flex items-center justify-center px-2 py-8 mx-auto sm:px-10 sm:py-0">
+          <div class="w-full  xl:p-0 py-8 ">
+            <div class="">
+             
+              <div class="flex flex-col md:flex-row px-5 py-10 md:items-center md:justify-center gap-x-7 gap-y-5 border">
+                <div class="order-2">
+                  <img src="~/assets/media/logo.png" alt="" class=" rounded-lg object-cover object-center">
+                  <p class="text-sm text-center font-semibold font-serif">
+                    Already have an account?
+                    <NuxtLink to="/auth/login"
+                      class="text-primary-600 text-green-500 hover:text-green-700 font-bold font-sans">
+                     Login</NuxtLink>
+                  </p>
                 </div>
-                <form class="space-y-4 md:space-y-6" id="reg_form" @submit.prevent="Register">
-                  <div class="w-fit mx-auto">
-                    <logo></logo>
-                  </div>
+                <form class=" font-sans" id="reg_form" @submit.prevent="Register">
+                    <div class="w-fit mx-auto mt-2"><logo></logo></div>
+
+                    <div class="">
+                      <label for="country" class="block mb-2 text-sm font-medium ps-1">Plan</label>
+                      <select v-model="form.plan"
+                        class="bg-gray-50 border border-gray-300 sm:text-sm 
+                        appearance-none outline-none w-full p-2.5 capitalize font-semibold">
+                        <option :value="plan" v-for="(plan, index) in plans" :key="index">
+                          {{ plan }}
+                        </option>
+                      </select>
+                    </div>
                   <div class="flex flex-col md:flex-row gap-3">
                     <div class="w-full">
-                      <label for="firstname" class="mb-2 text-sm font-medium">First Name</label>
+                      <label for="firstname" class="mb-2 text-sm font-medium ps-1">First Name</label>
                       <input type="text" v-model="form.firstname" id="firstname"
-                        class="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg appearance-none focus:ring-primary-600 focus:border-primary-600 w-full p-2.5"
+                        class="bg-gray-50 border border-gray-300 sm:text-sm appearance-none outline-none w-full p-2.5"
                         placeholder="first name" required />
                     </div>
                     <div class="w-full">
-                      <label for="lastname" class="mb-2 text-sm font-medium">Last Name</label>
+                      <label for="lastname" class="mb-2 text-sm font-medium ps-1">Last Name</label>
                       <input type="text" v-model="form.lastname" id="lastname"
-                        class="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg appearance-none focus:ring-primary-600 focus:border-primary-600 w-full p-2.5"
+                        class="bg-gray-50 border border-gray-300 sm:text-sm appearance-none outline-none w-full p-2.5"
                         placeholder="last name" required />
                     </div>
                   </div>
                   <div class="flex flex-col md:flex-row gap-3">
                     <div class="w-full">
-                      <label for="email" class="block mb-2 text-sm font-medium">
+                      <label for="email" class="block mb-2 text-sm font-medium ps-1">
                         Username</label>
                       <input type="text" v-model="form.username" id="username"
-                        class="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5"
+                        class="bg-gray-50 border border-gray-300 sm:text-sm outline-none w-full p-2.5"
                         placeholder="username" required />
                     </div>
                     <div class="w-full">
-                      <label for="email" class="block mb-2 text-sm font-medium">
+                      <label for="email" class="block mb-2 text-sm font-medium ps-1">
                         Email</label>
                       <input type="email" v-model="form.email" id="email"
-                        class="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 w-full p-2.5"
+                        class="bg-gray-50 border border-gray-300 sm:text-sm outline-none w-full p-2.5"
                         placeholder="Email" required />
                     </div>
                   </div>
 
                   <div class="flex flex-col md:flex-row gap-3">
                     <div class="w-full">
-                      <label for="country" class="block mb-2 text-sm font-medium">Country</label>
+                      <label for="country" class="block mb-2 text-sm font-medium ps-1">Country</label>
                       <select @change="changeCountryCode" v-model="form.country"
-                        class="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg appearance-none focus:ring-primary-600 focus:border-primary-600 w-full p-2.5 ">
+                        class="bg-gray-50 border border-gray-300 sm:text-sm appearance-none outline-none w-full p-2.5 ">
                         <option :value="x.country" v-for="(x, index) in countries" :key="index">
                           {{ x.country }}
                         </option>
@@ -352,10 +367,10 @@ const Register = async (e) => {
                     </div>
 
                     <div class="w-full">
-                      <label for="" class="block mb-2 text-sm font-medium">Phone</label>
+                      <label for="" class="block mb-2 text-sm font-medium ps-1">Phone</label>
 
                       <div
-                        class="flex focus-within:ring-2 focus-within:border-0 ring-black ring-offset-1 rounded-lg bg-gray-50 border-2 border-gray-300">
+                        class="flex ring-offset-1  bg-gray-50 border-2 border-gray-300">
                         <input type="text" v-model="form.code" id="" readonly
                           class="p-2.5 w-14 appearance-none outline-none rounded-s-lg" />
                         <input type="text" v-model="form.phone" placeholder="000 000 0000"
@@ -365,34 +380,29 @@ const Register = async (e) => {
                   </div>
                   <div class="flex flex-col md:flex-row gap-3">
                     <div class="w-full">
-                      <label for="password" class="block mb-2 text-sm font-medium">Password</label>
+                      <label for="password" class="block mb-2 text-sm font-medium ps-1">Password</label>
                       <input type="password" v-model="form.password" id="password" placeholder="••••••••"
-                        class="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                        class="bg-gray-50 border border-gray-300 sm:text-sm  outline-none block w-full p-2.5"
                         required />
                     </div>
                     <div class="w-full">
-                      <label for="password" class="block mb-2 text-sm font-medium">Confirm</label>
+                      <label for="password" class="block mb-2 text-sm font-medium ps-1">Confirm</label>
                       <input type="password" v-model="cpass" id="password" placeholder="••••••••"
-                        class="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                        class="bg-gray-50 border border-gray-300 sm:text-sm outline-none block w-full p-2.5"
                         required />
                     </div>
 
                   </div>
 
                   <div class="mt-5 text-center">
-                    <button type="submit" class="mt-2  group mb-3 ring-2 max-w-sm w-full rounded-lg py-2 font-bold
-                                        ring-green-700 hover:ring-green-500 hover:ring-4 disabled:ring-0" id="sbutton">
+                    <button type="submit" class="mt-2  group mb-3 max-w-sm w-full rounded-lg py-2 font-bold
+                                      border border-black/50 hover:border-2" id="sbutton">
                       <i class="fas fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
                       Register
                     </button>
                   </div>
 
-                  <p class="text-sm text-center font-semibold font-serif">
-                    Already have an account?
-                    <NuxtLink to="/auth/login"
-                      class="text-primary-600 text-green-500 hover:text-green-700 font-bold font-sans">
-                      Login</NuxtLink>
-                  </p>
+                
                 </form>
               </div>
 

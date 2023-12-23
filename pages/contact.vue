@@ -27,16 +27,21 @@ const send_feedback = async (e) => {
         document.getElementById('sbtn').disabled = false
     }
 }
+
+onMounted(() => {
+AOS.refreshHard()
+})
 </script>
 <template>
-    <div class="w-screen h-screen  relative border">
+    <div>
+        <div class="w-screen h-screen  relative border">
         <div class="absolute top-0 left-0 w-full h-full bg-black/50"></div>
         <video src="~/assets/media/contact-bg.mp4" autoplay loop class="h-full w-full object-cover">
         </video>
         <div class="flex justify-center absolute z-30 bottom-[30%] w-full left-0 ">
             <div
                 class=" text-center max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-3xl w-full
-                 mx-3  bg-green-700/50 px-5 py-12 animate__animated animate__slideInUp">
+                 mx-3  bg-black/50 px-5 py-12 animate__animated animate__slideInUp text-white/70">
                 <h1 class="text-5xl font-bold my-3">Contact Us</h1>
                 <p class="text-xl font-semibold ">Do you have any queries or suggestions? Please contact us about all
                     enquiries including membership and volunteer work using the form below.</p>
@@ -55,7 +60,7 @@ const send_feedback = async (e) => {
             <div class="contact_info -mt-10">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-10 offset-lg-1">
+                        <div class="col-lg-10 offset-lg-1" data-aos="fade-right">
                             <div class=" !flex lg:!flex-row !flex-col justify-between align-center">
 
                                 <!-- Contact Item -->
@@ -69,7 +74,7 @@ const send_feedback = async (e) => {
                                 </div>
 
                                 <!-- Contact Item -->
-                                <div class="contact_info_item !flex flex-row items-center justify-start">
+                                <div class="contact_info_item !flex flex-row items-center justify-start" data-aos="fade-up">
                                     <div class="contact_info_image"><img
                                             src="https://img.icons8.com/ultraviolet/24/000000/filled-message.png" alt="">
                                     </div>
@@ -81,7 +86,7 @@ const send_feedback = async (e) => {
                                 </div>
 
                                 <!-- Contact Item -->
-                                <div class="contact_info_item !flex flex-row items-center justify-start">
+                                <div class="contact_info_item !flex flex-row items-center justify-start" data-aos="fade-left">
                                     <div class="contact_info_image"><img
                                             src="https://img.icons8.com/ultraviolet/24/000000/map-marker.png" alt=""></div>
                                     <div class="contact_info_content">
@@ -98,7 +103,7 @@ const send_feedback = async (e) => {
 
             <!-- Contact Form -->
 
-            <div class="contact_form" ng-controller="contactform">
+            <div class="contact_form" ng-controller="contactform" data-aos="fade-up">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 offset-lg-1">
@@ -208,6 +213,7 @@ const send_feedback = async (e) => {
                 </section> -->
     <!-- </div>
         </div> -->
+    </div>
 </template>
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900|Rubik:300,400,500,700,900');

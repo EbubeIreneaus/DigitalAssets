@@ -3,11 +3,11 @@
 <template>
   <section class="px-5 md:mx-20 ">
     <div class="py-10 px-1">
-      <h2
+      <h2 data-aos=""
         class="text-4xl font-extrabold relative py-5 before:absolute before:border before:w-32 before:bottom-0 before:border-primary-hover text-center">
        Our Service
       </h2>
-      <p class="text-justify mt-4">
+      <p class="text-justify mt-4" data-aos="fade-up">
         We always put our valued customers first and dedicate ourselves time and
         expertise in making our customers ever grateful for investing with us..
         However, our clients get much more including our selection of
@@ -15,7 +15,7 @@
         ready to serve our customers much better.
       </p>
 
-      <div class= "grid sm:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:flex-row flex-wrap gap-x-5 mt-10 justify-center ">
+      <div data-aos="fade-right" class= "grid sm:grid-cols-2 lg:grid-cols-3 gap-y-10 lg:flex-row flex-wrap gap-x-5 mt-10 justify-center ">
             <div class="flex flex-col gap-3 shadow-md items-center shadow-primary-hover px-5  py-7">
                 <img src="~/assets/media/service-forex.png" alt="" class="w-20 h-20 object-cover rounded-full shadow-md shadow-slate-300">
                 <h2 class=" text-3xl font-bold text-center">Forex</h2>

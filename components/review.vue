@@ -56,8 +56,8 @@ onMounted(() => {
 
 <template>
  <div class=" py-10 px-9 bg-[url('~/assets/media/review-bg.jpg')] relative
-  before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-black/50">
-  <h2 id="carousel-heading" class="text-3xl relative py-5 r text-center text-green-500">
+  before:absolute before:left-0 before:top-0 before:w-full before:h-full before:bg-black/50" data-aos="fade-up">
+  <h2 id="carousel-heading" class="text-3xl relative py-5 font-bold text-white text-center ">
        Client Reviews</h2>
        <br>
     <section class="splide container mx-auto" aria-label="carousel-heading">
@@ -67,12 +67,12 @@ onMounted(() => {
           <div class="splide__slide" v-for="(x, index) in reviews" :key="index" 
           style="box-shadow: 0 4px 10px rgba(0, 0, 0, .6);">
             <div class="gap-x-28"  >
-              <div class="h-28  relative " style="background-color:black; position: relative;">
+              <div class="h-28  relative " style="background-color:white; position: relative;">
                 <div class="w-full " style="position: absolute !important; bottom: -40px;">
                   <img :src="`/img/${x.image}`" alt="" class="w-20 h-20 mx-auto rounded-full object-cover object-center"></div>
               </div>
               <div class=" ">
-                <div class="text-center " style="margin-top: 50px;color:green">
+                <div class="text-center " style="margin-top: 50px; color:white; font-size:bold">
                   <h2 class="text-2xl">{{ x.name }}</h2>
                   <p style="color:white">{{ x.location }}</p>
                   <hr class="w-[80%] mx-auto">

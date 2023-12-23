@@ -1,7 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   app: {
+    pageTransition: {
+      name: 'page',
+      mode: 'out-in'
+    },
+
+    layoutTransition: {
+      name: 'layout',
+      mode: "out-in"
+    },
     head: {
       title: "Digital Assets",
       link: [
@@ -9,6 +19,10 @@ export default defineNuxtConfig({
           rel: 'preload',
           href: 'https://cdn.shareaholic.net/assets/pub/shareaholic.js',
           as: 'script'
+        },
+        {
+          rel: 'stylesheet',
+          href: 'https://unpkg.com/aos@2.3.1/dist/aos.css',
         },
 
         {
@@ -28,9 +42,10 @@ export default defineNuxtConfig({
 
       script: [
         { src: "https://s3.tradingview.com/tv.js", tagPosition: 'head' },
+        { src: 'https://unpkg.com/aos@2.3.1/dist/aos.js', tagPosition: 'bodyClose' },
         {
           src: "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit",
-          tagPosition:'bodyClose',
+          tagPosition: 'bodyClose',
           async: 'true'
         },
         {
@@ -44,11 +59,14 @@ export default defineNuxtConfig({
           async: true,
           defer: true // Optional: defer loading if necessary
         }
-      
+
       ],
-    }
+    },
+
   },
-  css: ['~/assets/css/style.css','~/assets/css/main.css', '@fortawesome/fontawesome-free/css/all.css', '@splidejs/splide/css', 'animate.css/animate.css'],
+  css: ['~/assets/css/style.css', '~/assets/css/main.css', '@fortawesome/fontawesome-free/css/all.css',
+    '@splidejs/splide/css', 'animate.css/animate.css'],
+
   postcss: {
     plugins: {
       tailwindcss: {},

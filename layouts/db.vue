@@ -21,8 +21,8 @@ const account = ref(null)
 provide('profileId', profileId)
 
 
-const url = 'https://digital-assets-b.vercel.app/'
-// const url = "http://127.0.0.1:8000/"
+// const url = 'https://digital-assets-b.vercel.app/'
+const url = "http://127.0.0.1:8000/"
 
 provide('url', url)
 
