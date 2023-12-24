@@ -134,9 +134,9 @@ onMounted(() => {
 
         </main>
 
-        <!-- <footer class="relative bg-black text-green-700 pt-8 pb-6">
+        <footer class="relative bg-slate-900 text-white pt-8 pb-6">
             <div class="container mx-auto px-4">
-                <google-translate></google-translate>
+                <!-- <google-translate></google-translate> -->
 
 
                 <hr class="my-6 border-blueGray-300">
@@ -149,7 +149,7 @@ onMounted(() => {
                     </div>
                 </div>
             </div>
-        </footer> -->
+        </footer>
     </div>
 </template>
 
