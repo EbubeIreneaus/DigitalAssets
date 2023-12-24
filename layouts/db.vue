@@ -48,6 +48,7 @@ const nav = ref([
     { title: "account", link: "/user/account", icon: "fa-solid fa-address-card" },
     { title: "referral", link: "/user/referral", icon: "fa-solid fa-down-left-and-up-right-to-center" },
     { title: "contact us", link: "/user/contact", icon: 'fa-solid fa-phone' },
+    { title: "transfer", link: "/user/transfer", icon: "fa-solid fa-share" },
     { title: "logout", link: "/auth/logout", icon: "fa-solid fa-right-from-bracket" },
 ])
 
@@ -93,8 +94,8 @@ onMounted(() => {
 
         </div>
 
-        <aside class="max-w-sm  absolute top-0 opacity-0 w-0 lg:opacity-1 lg:!w-full flex
-                 flex-col gap-y-10 transition-all duration-500 rounded-bl-[70px] z-[999]">
+        <aside class="max-w-sm  absolute top-0 opacity-0 w-0 lg:opacity-100 lg:!w-full flex
+                 flex-col gap-y-10 transition-all duration-500 rounded-bl-[70px]">
 
             <div class="max-w-[100vw] md:max-w-sm">
 
@@ -121,6 +122,15 @@ onMounted(() => {
                             <i :class="x.icon" class="fa-lg"></i>
                             <p class="capitalize side-links  py-3 px-2 rounded-e-full">{{ x.title }}</p>
                         </nuxt-link>
+                    </div>
+
+                    <div class="border-4 bg-slate-950 text-white w-64 px-7 py-10 rounded-xl">
+                        <div>
+                        <h2 class="text-lg font-bold">Need Help?</h2>
+                            <p class="my-5">Contact our 24/7 customer support center</p>
+                            <NuxtLink to="/user/contact" 
+                            class="bg-white text-black px-10 py-2 rounded-xl font-semibold">contact us</NuxtLink>
+                        </div>
                     </div>
 
                 </div>
