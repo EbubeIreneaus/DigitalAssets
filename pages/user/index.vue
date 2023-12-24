@@ -32,8 +32,8 @@ definePageMeta({
 })
 let forex_widget= ref('')
 
-const userId = inject("userId");
-const url = inject("url");
+const props = defineProps(['api'])
+const url = props.api;
 
 const account = inject('account')
 

@@ -5,7 +5,7 @@ definePageMeta({
 })
 const props = defineProps(['api'])
 const url = props.api;
-const plans = ['standard', 'silver', 'premium', 'ultra', 'visa']
+const plans = ['personal', 'joint', 'organization', 'visa', 'retirement']
 const cpass = ref(null);
 const countries = ref([
   { country: "Afghanistan", code: "+93" },
@@ -205,7 +205,7 @@ const countries = ref([
 ]);
 
 const form = reactive({
-  plan: 'standard',
+  plan: 'personal',
   firstname: "",
   lastname: "",
   username: "",
@@ -315,7 +315,7 @@ const Register = async (e) => {
                     <div class="w-fit mx-auto mt-2"><logo></logo></div>
 
                     <div class="">
-                      <label for="country" class="block mb-2 text-sm font-medium ps-1">Plan</label>
+                      <label for="country" class="block mb-2 text-sm font-medium ps-1">Account</label>
                       <select v-model="form.plan"
                         class="bg-gray-50 border border-gray-300 sm:text-sm 
                         appearance-none outline-none w-full p-2.5 capitalize font-semibold">

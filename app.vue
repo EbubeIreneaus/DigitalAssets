@@ -1,13 +1,14 @@
 <template>
     <div>
-        <NuxtLayout>
+        <NuxtLayout :api="api">
             <NuxtLoadingIndicator />
-            <NuxtPage api="http" /> <!-- https://digital-assets-b.vercel.app/ -->
+            <NuxtPage :api="api" /> <!-- https://digital-assets-b.vercel.app/ -->
         </NuxtLayout>
     </div>
 </template>
 
 <script setup>
+const api = "http://127.0.0.1:8000/"
 onMounted(() => {
   AOS.init({
     offset: 120, // offset (in px) from the original trigger point
