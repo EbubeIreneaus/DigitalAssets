@@ -94,7 +94,7 @@ onMounted(() => {
         </div>
 
         <aside class="max-w-sm  absolute top-0 opacity-0 w-0 lg:opacity-1 lg:!w-full flex
-                 flex-col gap-y-10 transition-all duration-500 rounded-bl-[70px]">
+                 flex-col gap-y-10 transition-all duration-500 rounded-bl-[70px] z-[999]">
 
             <div class="max-w-[100vw] md:max-w-sm">
 
