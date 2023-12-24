@@ -12,12 +12,12 @@
 
                 <div class="grid md:grid-cols-2 gap-y-7 gap-x-3">
                     <label class="flex items-center border border-black justify-between h-24 px-5 max-w-sm "
-                        :class="{ 'ring-2 ring-green-600 border-0 rounded-lg': deposit.channel == x.name }"
+                        :class="{ 'ring-2 ring-orange-500 border-0 rounded-lg': deposit.channel == x.name }"
                         v-for="x in paymentMethod">
                         <input type="radio" class="hidden peer" :value="x.name" v-model="deposit.channel">
                         <p class="font-semibold">{{ x.name }}</p>
                         <i
-                            class="fas fa-check-circle text-transparent border border-black rounded-full peer-checked:text-green-800"></i>
+                            class="fas fa-check-circle text-transparent border border-black rounded-full peer-checked:text-black"></i>
                     </label>
 
                 </div>
@@ -26,7 +26,7 @@
 
         <div class="max-w-sm w-full">
             <div class="font-bold mx-5 px-3 shadow-sm shadow-black py-10 overflow-hidden">
-                <h1 class="text-2xl mb-5 text-green-500 font-extrabold">Summary</h1>
+                <h1 class="text-2xl mb-5 text-orange-500 font-extrabold">Summary</h1>
                 <div class="flex justify-between ">
                     <p>Amount:</p>
                     <p class="font-mono sm:pe-3">{{ format_amount(deposit.amount) }}</p>
@@ -35,7 +35,7 @@
                     <p>Channel:</p>
                     <p class="sm:pe-3">{{ deposit.channel }}</p>
                 </div>
-                <button type="button" class="ring ring-black w-full py-5 mt-5 hover:ring-green-600 relative group
+                <button type="button" class="ring ring-black w-full py-5 mt-5 hover:ring-orange-600 relative group
                                             disabled:cursor-not-allowed disabled:ring-0 disabled:border"
                     @click="initiate($event)">
                     <i class="fas fa-spinner invisible group-disabled:visible animate-spin "></i>Make Deposit
@@ -105,8 +105,8 @@ import Axios from 'axios'
 definePageMeta({
     layout: 'db'
 })
-
-const url = inject('url')
+const props = defineProps(['api'])
+const url = props.api
 const account = inject("account")
 
 const paymentMethod = reactive([

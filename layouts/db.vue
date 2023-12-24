@@ -71,7 +71,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="account" class=" bg-slate-200  border  border-transparent border-t-black main w-full  font-serif ">
+    <div v-if="account" class="  border  border-transparent border-t-black main w-full  font-serif ">
         <div class="h-[65vh] bg-slate-950 rounded-bl-[70px]">
             <header class="w-full border-b border-white/10  z-[9999]  top-0">
                 <div class="flex justify-end pe-8 py-3 font-thin px-5">
@@ -115,7 +115,7 @@ onMounted(() => {
                     </div>
                 </div>
 
-                <div class="mb-5 mt-20 lg:ms-5 w-fit py-7 px-5 ">
+                <div class="mb-5  lg:ms-5 w-fit py-7 px-5 ">
                     <div role="list" class=" grid grid-cols-2 gap-y-3 place-items-center text-black text-center mx-2">
                         <nuxt-link :to="x.link" v-for="x, index in nav" :key="index" @click="toogleSidebar"
                             class="py-5 rounded-2xl hover:bg-slate-100 w-fit px-7 font-sans">
