@@ -58,7 +58,7 @@ const toogleSidebar = () => {
     const main = document.querySelector('main')
     aside.classList.toggle('opacity-0')
     aside.classList.toggle('!w-full')
-    main.classList.toggle('!hidden')
+    // main.classList.toggle('!hidden')
     // //    aside.classList.toggle('w-0')
     
 }
@@ -101,7 +101,7 @@ onMounted(() => {
 
         </div>
 
-        <aside class="max-w-sm  absolute top-0 opacity-0 w-0 lg:opacity-100 lg:!w-full flex
+        <aside class="max-w-[100vw] sm:max-w-sm  fixed z-[999] lg:z-0 bg-white top-0 h-screen overflow-y-auto opacity-0 w-0 lg:opacity-100 lg:!w-full flex
                  flex-col gap-y-10 transition-all duration-500 rounded-bl-[70px]">
 
             <div class="max-w-[100vw] md:max-w-sm">
@@ -124,7 +124,7 @@ onMounted(() => {
 
                 <div class="mb-5  lg:ms-5 w-fit py-7 px-5 ">
                     <div role="list" class=" grid grid-cols-2 gap-y-3 place-items-center text-black text-center mx-2">
-                        <nuxt-link :to="x.link" v-for="x, index in nav" :key="index" @click="closeSidebar"
+                        <nuxt-link :to="x.link" v-for="x, index in nav" :key="index" @click="toogleSidebar"
                             class="py-5 rounded-2xl hover:bg-slate-100 w-fit px-7 font-sans">
                             <i :class="x.icon" class="fa-lg"></i>
                             <p class="capitalize side-links  py-3 px-2 rounded-e-full">{{ x.title }}</p>
@@ -145,8 +145,8 @@ onMounted(() => {
 
         </aside>
 
-        <main class="shadow-md shadow-black/30 px-5 ms-0 -mt-[35vh] bg-white md:px-6 w-full 
-                lg:w-[calc(100vw-386px)]  md:ms-[350px] relative overflow-hidden ">
+        <main class="shadow-md shadow-black/30 px-5 ms-0 -mt-[37vh] bg-white md:px-6 w-full 
+                lg:w-[calc(100vw-415px)]  lg:ms-[385px] relative overflow-hidden ">
             <slot></slot>
 
         </main>
@@ -172,18 +172,18 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 ::-webkit-scrollbar {
-    width: 7px;
+    width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: green;
+   background-color: rgba(2, 6, 23, 1);
 
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: blue;
+    
     border-radius: 40px;
-
+    background-color: orangered;
 }
 
 aside {

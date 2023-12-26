@@ -2,7 +2,7 @@
     <div>
         <NuxtLayout :api="api">
             <NuxtLoadingIndicator />
-            <NuxtPage :api="api" transition="true" /> <!-- https://digital-assets-b.vercel.app/ -->
+            <NuxtPage :api="api" /> <!-- https://digital-assets-b.vercel.app/ -->
         </NuxtLayout>
     </div>
 </template>
