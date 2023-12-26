@@ -205,7 +205,7 @@ const countries = ref([
 ]);
 
 const form = reactive({
-  plan: 'personal',
+  type: 'personal',
   firstname: "",
   lastname: "",
   username: "",
