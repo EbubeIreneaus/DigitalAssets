@@ -61,7 +61,7 @@ useHead({
     title: 'my Referrals'
 })
 const account = inject('account')
-const referral_id = `https://dg-assets.com/auth/register/${account.value.profile.id}`
+const referral_id = `https://dg-assets.com/auth/register/${account.value.profile.user.username}`
 const referrals = ref([])
 const null_referrals = ref(false)
 const copied_success = ref(false)

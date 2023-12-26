@@ -192,7 +192,7 @@ aside {
         // margin-left: 10px;
         // // border-inline-start-width: 4px;
         // border-inline-start-color: rgb(21 128 61);
-        background-color: rgb(196, 131, 10);
+        background-color: rgba(234, 88, 12, 1);
 
     }
 }
