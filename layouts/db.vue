@@ -97,11 +97,12 @@ onMounted(() => {
 
             </header>
             <h2 class="text-white text-2xl mt-10 border-b py-1 w-[90%] lg:w-[60%] lg:ml-[30%] mx-auto">
-                Welcome {{ account.profile.user.username }}</h2>
+                Welcome {{ account.profile.user.username }} 
+                <sup class="text-orange-500">({{ account.profile.type }} Account)</sup></h2>
 
         </div>
 
-        <aside class="max-w-[100vw] sm:max-w-sm  fixed z-[999] lg:z-0 bg-white top-0 h-screen overflow-y-auto opacity-0 w-0 lg:opacity-100 lg:!w-full flex
+        <aside class="max-w-[100vw] sm:max-w-sm  fixed lg:absolute z-[999] lg:z-0 bg-white top-0 h-screen lg:h-fit overflow-y-auto opacity-0 w-0 lg:opacity-100 lg:!w-full flex
                  flex-col gap-y-10 transition-all duration-500 rounded-bl-[70px]">
 
             <div class="max-w-[100vw] md:max-w-sm">

@@ -8,7 +8,8 @@ const plans = ref({
     'silver': { 'plan': 'silver', 'min': 2001, 'max': 20000, 'duration': '1 weeks', 'roi': 6.6, 'bonus': 0 },
     'premium': { 'plan': 'premium', 'min': 20001, 'max': 100000, 'duration': '1 months', 'roi': 10, 'bonus': 0 },
     'ultra': { 'plan': 'ultra', 'min': 100001, 'max': 1000000, 'duration': '3 months', 'roi': 12, 'bonus': 0 },
-    'visa': { 'plan': 'visa', 'min': 1000001, 'max': 100000000, 'duration': '6 months', 'roi': 20, 'bonus': 20 },
+    'promo': { 'plan': 'promo', 'min': 2000, 'max': 100000, 'duration': '1 months', 'roi': 5.5, 'bonus': 0 },
+    'visa': { 'plan': 'visa', 'min': 2000, 'max': 1000000, 'duration': '1 months', 'roi': 8.5, 'bonus': 20 },
 })
 const account = inject('account')
 const url = props.api
@@ -79,6 +80,7 @@ const initiate = async (e) => {
             <div class="w-full flex-grow px-5 py-5 shadow-xl  ">
                 <select v-model="invest.plan" class=" appearance-none outline-none border py-3 w-full ps-3 font-semibold">
                     <option value="visa">Visa Plan</option>
+                    <option value="promo">Promo Plan</option>
                     <option value="ultra">Ultra Plan</option>
                     <option value="premium">Premium Plan</option>
                     <option value="silver">Silver Plan</option>
