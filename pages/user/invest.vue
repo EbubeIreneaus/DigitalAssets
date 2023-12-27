@@ -8,7 +8,7 @@ const plans = ref({
     'silver': { 'plan': 'silver', 'min': 2001, 'max': 20000, 'duration': '1 weeks', 'roi': 6.6, 'bonus': 0 },
     'premium': { 'plan': 'premium', 'min': 20001, 'max': 100000, 'duration': '1 months', 'roi': 10, 'bonus': 0 },
     'ultra': { 'plan': 'ultra', 'min': 100001, 'max': 1000000, 'duration': '3 months', 'roi': 12, 'bonus': 0 },
-    'promo': { 'plan': 'promo', 'min': 2000, 'max': 100000, 'duration': '1 months', 'roi': 5.5, 'bonus': 0 },
+    'promo': { 'plan': 'promo', 'min': 1000, 'max': 100000, 'duration': '1 months', 'roi': 5.5, 'bonus': 0 },
     'visa': { 'plan': 'visa', 'min': 2000, 'max': 1000000, 'duration': '1 months', 'roi': 8.5, 'bonus': 20 },
 })
 const account = inject('account')
@@ -114,15 +114,21 @@ const initiate = async (e) => {
 
                 <div class="mb-10">
                     <p>Or Enter Your Amount</p>
-                    <input type="text" v-model="invest.amount" class="w-full py-3 mt-2 outline-none border font-mono font-semibold ps-3"/>
+                    <input type="text" v-model="invest.amount"
+                        class="w-full py-3 mt-2 outline-none border font-mono font-semibold ps-3" />
                 </div>
 
                 <div>
                     <p>Choose Payment Method</p>
-                    <div class="flex items-center gap-5 border py-3 px-5 bg-slate-300 rounded-lg mt-3">
-                        <i class="fa fa-wallet"></i>
-                        <span>Account Balance</span>
+                    <div
+                        class="flex items-center gap-5 border py-3 px-5 bg-slate-300 rounded-lg mt-3 w-full justify-between">
+                        <div class="flex items-center gap-5">
+                            <i class="fa fa-wallet"></i>
+                            <span>Account Balance</span>
+                        </div>
+                        <span class="font-mono font-semibold px-2">{{ format_amount(account.balance) }}</span>
                     </div>
+
                 </div>
 
             </div>
@@ -162,7 +168,8 @@ const initiate = async (e) => {
                         </div>
                         <div class="">
                             <small>Maximum Return</small><br>
-                            <small class="capitalize text-black/80">{{ plans[invest.plan].roi }}% x {{ plans[invest.plan].duration }}</small>
+                            <small class="capitalize text-black/80">{{ plans[invest.plan].roi }}% x
+                                {{ plans[invest.plan].duration }}</small>
                         </div>
                         <div class="">
                             <small>Bonus</small><br>
@@ -214,5 +221,4 @@ const initiate = async (e) => {
     transform: translateX(0) !important;
     opacity: 1 !important;
     display: block;
-}
-</style>
+}</style>

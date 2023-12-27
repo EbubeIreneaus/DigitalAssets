@@ -68,8 +68,8 @@ AOS.refreshHard()
                                     <div class="contact_info_image"><img
                                             src="https://img.icons8.com/office/24/000000/iphone.png" alt=""></div>
                                     <div class="contact_info_content">
-                                        <div class="contact_info_title text-orange-600">Phone</div>
-                                        <div class="contact_info_text">+1 401 594 9299</div>
+                                        <div class="contact_info_title">Whatsapp</div>
+                                        <div class="contact_info_text">+44 753 474 1946</div>
                                     </div>
                                 </div>
 
@@ -91,7 +91,7 @@ AOS.refreshHard()
                                             src="https://img.icons8.com/ultraviolet/24/000000/map-marker.png" alt=""></div>
                                     <div class="contact_info_content">
                                         <div class="contact_info_title text-orange-600">Address</div>
-                                        <div class="contact_info_text">4th St, Downey, CA 90241, USA</div>
+                                        <div class="contact_info_text">4th St, Downey, CA 90241, UK</div>
                                     </div>
                                 </div>
 

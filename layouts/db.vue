@@ -44,7 +44,9 @@ const nav = ref([
     { title: "dashboard", link: "/user/", icon: 'fas fa-home' },
     { title: "deposit", link: "/user/deposit", icon: 'fas fa-download' },
     { title: "buy plan", link: "/user/invest", icon: 'fa-solid fa-money-bill-trend-up' },
+    { title: "my plan", link: "/user/activePlan", icon: 'fa-solid fa-hand-holding-dollar' },
     { title: "withdraw", link: "/user/withdraw", icon: "fa-solid fa-circle-arrow-up" },
+    { title: "transactions", link: "/user/transactions", icon: "fa-solid fa-hand-holding-dollar" },
     { title: "account", link: "/user/account", icon: "fa-solid fa-address-card" },
     { title: "referral", link: "/user/referral", icon: "fa-solid fa-down-left-and-up-right-to-center" },
     { title: "contact us", link: "/user/contact", icon: 'fa-solid fa-phone' },
@@ -78,7 +80,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div v-if="account" class="  border  border-transparent border-t-black main w-full  font-serif ">
+    <div v-if="account" class="  border  border-transparent border-t-black main w-full  font-sans ">
         <div class="h-[65vh] bg-slate-950 rounded-bl-[70px]">
             <header class="w-full border-b border-white/10  z-[9999]  top-0">
                 <div class="flex justify-end pe-8 py-3 font-thin px-5">
