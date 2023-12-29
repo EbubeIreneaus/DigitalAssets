@@ -14,11 +14,11 @@
                     </div>
                     +
                     <div>
-                        <h2 class="text-lg font-mono font-bold text-green-400">{{ format_amount(plans_arr[plan.plan].roi/10 * plan.amount ) }}</h2>
+                        <h2 class="text-lg font-mono font-bold text-green-400">{{ format_amount(0) }}</h2>
                         <p>Profit</p>
                     </div>
                     <div>
-                        <h2 class="text-lg font-mono font-bold text-green-400">{{ format_amount(Number((plans_arr[plan.plan].roi/10) * plan.amount) + Number(plan.amount )) }}</h2>
+                        <h2 class="text-lg font-mono font-bold text-green-400">{{ plan.amount }}</h2>
                         <p>Total Return</p>
                     </div>
                 </div>  

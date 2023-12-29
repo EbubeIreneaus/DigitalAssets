@@ -209,6 +209,25 @@ onMounted(() => {
         </div>
         <!-- plans -->
         <div class="py-20 border font-sans">
+            <div class="py-20  font-sans">
+                
+                <ul>
+                    <NuxtLink :to="`/user/activePlan/${plan.transact_id}`" v-for="(plan, index) in plans" >
+                        <li class="flex justify-between items-center  text-black/70 md:px-7 py-3 hover:bg-slate-200 mb-4">
+                            <h4 class="font-bold capitalize text-lg">{{ plan.plan }} -
+                                <span class="text-base font-mono font-semibold">Amount-{{ format_amount(plan.amount) }}</span>
+                            </h4>
+                            <p>
+                                <span class="bg-green-600/80 text-white py-px px-1 rounded-md">
+                                    {{ plan.status }}
+                                </span>
+                                -status
+                            </p>
+                            <i class="fa fa-angle-right"></i>
+                        </li>
+                    </NuxtLink>
+                </ul>
+            </div>
             <div class="flex flex-col gap-3 justify-center items-center">
                 <p class="text-black/50 font-semibold ">You have <span class="font-mono">({{ plans.length }})</span> active
                     plan available, buy new plan!!</p>
@@ -227,7 +246,7 @@ onMounted(() => {
                             <th class="py-5 px-4">Date</th>
                             <th class="py-5 px-4">type</th>
                             <th class="py-5 px-4">Amount</th>
-                            <!-- <th class="py-5 px-4">progress</th> -->
+                            <th class="py-5 px-4">status</th>
                         </tr>
                     </thead>
 
@@ -239,7 +258,7 @@ onMounted(() => {
                             <td class="px-5">{{ tx.type ?? "****" }}</td>
                             <td class="px-5 border-b font-mono">{{ format_amount(tx.amount) }}</td>
 
-                            <!-- 
+                            
                             <td class="px-4  border-b" v-if="tx.status == 'pending'">
                                 <span class="w-fit border px-5 py-1 rounded-md text-sm border-red-300 text-red-500">pending</span>
                             </td>
@@ -248,7 +267,7 @@ onMounted(() => {
                             </td>
                             <td class="px-4 bg-red-600/50 text-red-400 border-b" v-if="tx.status == 'completed'">
                                 <span class="w-fit border px-5 py-1 rounded-md text-sm border-green-300 text-green-500">complete</span>
-                            </td> -->
+                            </td>
 
                             <!-- <td class="px-4  border-b" v-if="tx.progress == 'pending'">
                                 <span class="w-fit border px-5 py-1 rounded-md text-sm border-red-300 text-red-500">pending</span>

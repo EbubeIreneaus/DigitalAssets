@@ -2,15 +2,7 @@
     <div>
         <div class=" min-h-[400px] d-flex items-center justify-center">
             <div class="py-20  font-sans">
-                <div class="flex flex-col gap-3 justify-center items-center" v-if="plans.length < 1">
-                    <p class="text-black/50 font-semibold ">You have <span class="font-mono">({{ plans.length }})</span>
-                        active
-                        plan available, buy new plan!!</p>
-                    <NuxtLink to="/user/invest" class="px-7 py-3 w-fit text-white bg-orange-600 hover:bg-orange-400">Buy
-                        Plans
-                    </NuxtLink>
-                </div>
-
+                
                 <ul>
                     <NuxtLink :to="`/user/activePlan/${plan.transact_id}`" v-for="(plan, index) in plans" >
                         <li class="flex justify-between items-center  text-black/70 md:px-7 py-3 hover:bg-slate-200 mb-4">
@@ -28,6 +20,15 @@
                     </NuxtLink>
                 </ul>
             </div>
+            <div class="flex flex-col gap-3 justify-center items-center">
+                    <p class="text-black/50 font-semibold ">You have <span class="font-mono">({{ plans.length }})</span>
+                        active
+                        plan available, buy new plan!!</p>
+                    <NuxtLink to="/user/invest" class="px-7 py-3 w-fit text-white bg-orange-600 hover:bg-orange-400">Buy
+                        Plans
+                    </NuxtLink>
+                </div>
+
         </div>
     </div>
 </template>
