@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class=" min-h-[200px] d-flex items-center justify-center">
+        <div class=" min-h-[400px] d-flex items-center justify-center">
             <div class="py-20  font-sans">
                 <div class="flex flex-col gap-3 justify-center items-center" v-if="plans.length < 1">
                     <p class="text-black/50 font-semibold ">You have <span class="font-mono">({{ plans.length }})</span>

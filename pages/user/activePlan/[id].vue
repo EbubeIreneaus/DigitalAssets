@@ -2,16 +2,17 @@
     <div class="min-h-[400px]">
         <div v-if="plan" class="py-7 md:px-10 text-black/70">
             <div class="mb-8">
-                <h2 class="text-2xl font-semibold capitalize">{{ plan.plan }} - {{ plans_arr[plan.plan].roi }}% Daily for {{ plans_arr[plan.plan].duration }}</h2>
+                <h2 class="text-3xl font-semibold capitalize">{{ plan.plan }} - {{ plans_arr[plan.plan].roi }}% Daily for {{ plans_arr[plan.plan].duration }}</h2>
             </div>
             <hr>
             <div>
                 <p class="font-bold text-lg">Plan Information</p>
-                <div class="flex lg:gap-7 mt-4">
+                <div class="flex gap-3 lg:gap-7 mt-4">
                     <div>
                         <h2 class="text-lg font-mono font-bold">{{ format_amount(plan.amount) }}</h2>
-                        <p>Invested Amount</p>
+                        <p>Principal</p>
                     </div>
+                    +
                     <div>
                         <h2 class="text-lg font-mono font-bold text-green-400">{{ format_amount(plans_arr[plan.plan].roi/10 * plan.amount ) }}</h2>
                         <p>Profit</p>
@@ -27,7 +28,7 @@
                             <small class="capitalize text-black/80">{{ plans_arr[plan.plan].duration }} plan</small>
                         </div>
                         <div class="">
-                            <small>start Date</small><br>
+                            <small>Start Date</small><br>
                             <small class="capitalize text-black/80">{{ new Date(plan.start_date).toLocaleString() }}</small>
                         </div>
                         <div class="">
@@ -54,6 +55,16 @@
                     </div>
 
             </div>
+            <table class="table-auto w-full text-left border-separate border-spacing-y-1" v-if="transactions">
+                    <thead class="w-full">
+                        <tr class="capitalize bg-slate-200">
+                            <th class="py-5 px-4">Date</th>
+                            <th class="py-5 px-4">type</th>
+                            <th class="py-5 px-4">Amount</th>
+                            <!-- <th class="py-5 px-4">progress</th> -->
+                        </tr>
+                    </thead>
+            </table>
         </div>
 
     </div>

@@ -43,7 +43,7 @@ let sideLinks
 const nav = ref([
     { title: "dashboard", link: "/user/", icon: 'fas fa-home' },
     { title: "deposit", link: "/user/deposit", icon: 'fas fa-download' },
-    { title: "buy plan", link: "/user/invest", icon: 'fa-solid fa-money-bill-trend-up' },
+    { title: "trading plan", link: "/user/invest", icon: 'fa-solid fa-money-bill-trend-up' },
     { title: "my plan", link: "/user/activePlan", icon: 'fa-solid fa-hand-holding-dollar' },
     { title: "withdraw", link: "/user/withdraw", icon: "fa-solid fa-circle-arrow-up" },
     { title: "transactions", link: "/user/transactions", icon: "fa-solid fa-hand-holding-dollar" },
@@ -148,7 +148,7 @@ onMounted(() => {
 
         </aside>
 
-        <main class="shadow-md shadow-black/30 px-5 ms-0 -mt-[37vh] bg-white md:px-6 w-full 
+        <main class="shadow-md shadow-black/30 px-5 ms-0 -mt-[43vh] md:-mt-[37vh] bg-white md:px-6 w-full 
                 lg:w-[calc(100vw-415px)]  lg:ms-[385px] relative overflow-hidden ">
             <slot></slot>
 
