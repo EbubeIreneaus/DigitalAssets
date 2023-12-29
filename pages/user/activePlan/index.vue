@@ -55,10 +55,9 @@ if (transactions.value) {
         }
 
     }
+    provide('ts', plans.value)
 
 }
-
-provide('ts', plans.value)
 
 const format_amount = (amount) => {
     const num = new Intl.NumberFormat("en-US", {
