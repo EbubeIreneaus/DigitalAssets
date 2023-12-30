@@ -49,6 +49,7 @@ const nav = ref([
     { title: "transactions", link: "/user/transactions", icon: "fa-solid fa-hand-holding-dollar" },
     { title: "account", link: "/user/account", icon: "fa-solid fa-address-card" },
     { title: "referral", link: "/user/referral", icon: "fa-solid fa-down-left-and-up-right-to-center" },
+    { title: "swap crypto", link: "/user/swap", icon: "fa-solid fa-right-left" },
     { title: "contact us", link: "/user/contact", icon: 'fa-solid fa-phone' },
     { title: "transfer", link: "/user/transfer", icon: "fa-solid fa-share" },
     { title: "logout", link: "/auth/logout", icon: "fa-solid fa-right-from-bracket" },
