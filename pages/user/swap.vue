@@ -1,8 +1,8 @@
 <template>
     <div>
         <div>
-            <ul class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
-                <li class="flex items-center justify-evenly max-w-[200px] border my-2.5 py-4 shadow shadow-black/60"
+            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
+                <li class="flex items-center justify-evenly w-full border my-2.5 py-4 shadow shadow-black/60"
                     v-for="coin in coins">
                     <img :src="`/img/crypto/${coin.name}.png`" class="w-10 h-10" />
                     <div>
@@ -25,7 +25,7 @@
                 <!-- TradingView Widget END -->
 
                 <div class="max-w-sm w-full">
-                    <form class="font-semibold text-black/60 font-sans">
+                    <form class="font-semibold text-black/60 font-sans" @submit.prevent="swap($event)">
                         <div class="mb-3">
                             <label class="px-1">Source Account:</label>
                             <select class="block appearance-none border-2 outline-none w-full ps-5 py-4 my-3.5" v-model="form.source">
@@ -53,13 +53,32 @@
                         </div>
                         <p class="text-lg font-bold px-3">Fees = <span class="font-sans">40%</span></p>
                         <div>
-                            <button type="submit" class="py-3 px-20 my-5 bg-green-700 text-white rounded-xl">Swap</button>
+                            <button type="submit" class="py-3 px-20 my-5 bg-green-700 text-white rounded-xl"
+                           id="sbutton">Swap</button>
                         </div>
                     </form>
                 </div>
             </div>
 
         </div>
+        <LazyModal :visible="scsmodal">
+            <div class="flex items-center gap-x-7">
+                <div class="border w-fit px-5 py-4 rounded-full bg-green-500 text-white">
+                    <i class="fa fa-check font-bold text-xl"></i>
+                </div>
+                <h2 class="font-bold text-xl">Transaction Successful</h2>
+            </div>
+        </LazyModal>
+        <LazyModal :visible="errmodal">
+            <div class="flex items-center gap-x-7">
+                <div class="border w-fit px-5 py-4 rounded-full text-red-500">
+                    <i class="fa fa-warning font-bold text-xl"></i>
+                </div>
+                <div class="font-bold text-xl">Transaction Failed <br>
+                    <small class="text-sm text-black/50">{{ errmsg }}</small>
+                </div>
+            </div>
+        </LazyModal>
     </div>
 </template>
 
@@ -97,6 +116,7 @@ useHead({
 })
 const props = defineProps(['api'])
 const url = props.api
+const account = inject('account')
 const coins = {
     'usd': { name: 'usd', count: 0, price: 0.0 },
     'btc': { name: 'btc', count: 0, price: 0.0 },
@@ -111,6 +131,10 @@ const coins = {
     'xrp': { name: 'xrp', count: 0, price: 0.0 },
     'xlm': { name: 'xlm', count: 0, price: 0.0 },
 }
+
+const errmodal = ref(false) //error
+const errmsg = ref('') //error
+const scsmodal = ref(false) //success
 
 const form = reactive({
     source: 'usd',
@@ -132,6 +156,39 @@ const convert = async ()=>{
         form.cv = convert.value.return
     }
 }
+const swap = async (e)=>{
+    const btn = document.getElementById('sbtn')
+    const {data:swap, pending: pending, error:error} = await useFetch(`${url}/account/swap/`,{
+        method: 'post',
+        body: form,
+        watch: false,
+        headers: {
+            'profile-id': account.value.profile.id
+        }
+    })
+    if (pending.value) {
+        btn.innerText = 'please wait.....'
+        btn.disabled = true
+    }
+    if (error.value) {
+        errmodal.value = true
+        errmsg.value = error.value.statusCode + ' ' + error.value.statusMessage
+        return false
+
+    }
+    if(swap.value.status == 'failed'){
+        errmodal.value = true
+        errmsg.value = swap.value.msg
+        return false
+    }
+    if(swap.value.status == 'success'){
+        scsmodal.value = true
+        return true
+       
+    }
+   
+}
+
 onMounted(() => {
     new TradingView.widget(
         {
