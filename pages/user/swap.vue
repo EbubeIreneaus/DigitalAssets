@@ -1,17 +1,20 @@
 <template>
     <div>
         <div>
-            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1">
-                <li class="flex items-center justify-evenly w-full border my-2.5 py-4 shadow shadow-black/60"
-                    v-for="coin in coins">
+            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+                <li class="flex items-center justify-evenly w-full border font-semibold my-2.5 py-4 shadow shadow-black/60" 
+                v-for="coin in coins">
                     <img :src="`/img/crypto/${coin.name}.png`" class="w-10 h-10" />
-                    <div>
-                        <span>0</span>&nbsp;<span>{{ coin.name.toUpperCase() }}</span>
+                    <div v-if="coin.name == 'usd'">
+                        <span class="font-sans">{{ crypto.balance }}</span>&nbsp;<span>{{ coin.name.toUpperCase() }}</span>
+                    </div>
+                    <div v-else>
+                        <span class="font-sans">{{ crypto[coin.name] }}</span>&nbsp;<span>{{ coin.name.toUpperCase() }}</span>
                     </div>
                 </li>
             </ul>
         </div>
-        <div class="my-7">
+        <div class="my-7"> 
             <div class="flex flex-col gap-2 lg:flex-row">
                 <!-- TradingView Widget BEGIN -->
                 <div class="tradingview-widget-container" style="height:100%;width:100%">
@@ -132,6 +135,12 @@ const coins = {
     'xlm': { name: 'xlm', count: 0, price: 0.0 },
 }
 
+const {data: crypto} = await useFetch(`${url}/account/crypto/`,{
+    headers: {
+        'profile-id': account.value.profile.id
+    }
+})
+console.log(crypto);
 const errmodal = ref(false) //error
 const errmsg = ref('') //error
 const scsmodal = ref(false) //success
@@ -146,7 +155,7 @@ const form = reactive({
 const convert = async ()=>{
     const {data:convert, pending, error} = await useFetch(`${url}/manager/convert/`,{
         params:{"source":form.source, 'destination': form.destination, 'amount': form.amount},
-        watch: false
+        watch: [form]
     })
 
     if(error){
