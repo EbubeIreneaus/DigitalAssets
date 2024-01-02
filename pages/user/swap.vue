@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+            <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2" v-if="crypto">
                 <li class="flex items-center justify-evenly w-full border font-semibold my-2.5 py-4 shadow shadow-black/60" 
                 v-for="coin in coins">
                     <img :src="`/img/crypto/${coin.name}.png`" class="w-10 h-10" />
@@ -119,7 +119,13 @@ useHead({
 })
 const props = defineProps(['api'])
 const url = props.api
+
 const account = inject('account')
+const {data: crypto} = await useFetch(`${url}account/crypto/`,{
+    headers: {
+        'profile-id': account.value.profile.id
+    }
+})
 const coins = {
     'usd': { name: 'usd', count: 0, price: 0.0 },
     'btc': { name: 'btc', count: 0, price: 0.0 },
@@ -135,11 +141,7 @@ const coins = {
     'xlm': { name: 'xlm', count: 0, price: 0.0 },
 }
 
-const {data: crypto} = await useFetch(`${url}/account/crypto/`,{
-    headers: {
-        'profile-id': account.value.profile.id
-    }
-})
+
 console.log(crypto);
 const errmodal = ref(false) //error
 const errmsg = ref('') //error
@@ -167,7 +169,7 @@ const convert = async ()=>{
 }
 const swap = async (e)=>{
     const btn = document.getElementById('sbtn')
-    const {data:swap, pending: pending, error:error} = await useFetch(`${url}/account/swap/`,{
+    const {data:swap, pending: pending, error:error} = await useFetch(`${url}account/swap/`,{
         method: 'post',
         body: form,
         watch: false,
