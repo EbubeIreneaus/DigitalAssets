@@ -2,7 +2,7 @@
     <div>
         <div class="w-screen h-screen bg-slate-900 py-14 fixed left-0 top-0">
             <div class="max-w-sm w-full border py-10 mx-auto text-white/90 px-7 ">
-                <p class="text-center">This is a secure area. Please confirm your password</p>
+                <p class="text-center">This is a secure area. Please confirm your password before continuing</p>
                 <div class="py-5">
                     <form @submit.prevent="confirmUser($event)">
                         <p class="py-1.5 bg-red-600/50 px-7 my-2 text-red-500/80 rounded" v-if="error">
@@ -42,7 +42,7 @@ async function confirmUser(e) {
     })
     if (res.value.status == 'success') {
         e.target.reset()
-        useRouter().push('/auth/withdraw/xxvwy/')
+        useRouter().push('/user/withdraw/xxvwy/')
         return
     }
     if (res.value.status == 'failed') {
