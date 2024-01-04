@@ -41,7 +41,7 @@ if(res.value.charges){
                     <p class="bg-white text-black w-fit py-1 px-10 font-semibold rounded-b-lg">{{ coin.name.toUpperCase() }}</p>
                 </div>
                 <div class="mt-5 py-20 mb-5 border-b border-slate-100/50">
-                    <img src="~assets/media/wallet.svg.png" class="w-20 mx-auto object-fit"/>
+                    <img src="~/assets/media/wallet.svg.png" class="w-20 mx-auto object-fit"/>
                 </div>
                
                 <div class="text-center">
