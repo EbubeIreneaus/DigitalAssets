@@ -32,13 +32,15 @@ const props = defineProps(['api'])
 const url = props.api
 const account = inject('account')
 const password = ref('')
-async function confirmUser(e) {
+const confirmUser = async (e) => {
     const btn = document.getElementById('btn')
     btn.disabled = true;
     btn.innerHTML = 'please wait..'
-    const { data: res, pending, error:err } = await useFetch(`${url}/auth/`, {
+    const { data: res, pending, error:err } = await useFetch(`${url}auth/`, {
         method: 'get',
-        params: { 'username': account.value.profile.user.username, 'password': password.value }
+        query: { 'username': account.value.profile.user.username, 'password': password.value },
+        key: new Date().getTime().toString(),
+        watch: false,
     })
     if (res.value.status == 'success') {
         e.target.reset()
