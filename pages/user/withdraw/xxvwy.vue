@@ -13,8 +13,9 @@ const account = inject("account");
 const props = defineProps(['api'])
 const url = props.api
 
-const {data: res, error} = await useFetch(`${url}/manager/charges/`,{
-    method: 'get'
+const {data: res, error} = await useFetch(`${url}manager/charges/`,{
+    method: 'get',
+    watch: false,
 })
 if(res.value.charges){
     withdrawal_charges.value = res.value.charges

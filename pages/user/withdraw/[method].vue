@@ -45,11 +45,12 @@ const url = props.api
 const email_success = ref(false)
 const { method: channel } = useRoute().params
 
-async function withdrawOTP(e) {
+const withdrawOTP = async (e) => {
     e.target.innerText = 'requesting...'
-    const { data: res, pending, error } = await useFetch(`${url}/transaction/otp/`, {
+    const { data: res, pending, error } = await useFetch(`${url}transaction/otp/`, {
         method: 'get',
-        params: { 'profileId': account.value.profile.id }
+        params: { 'profileId': account.value.profile.id },
+        watch: false,
     })
     if (res.value.status == 'success') {
         const email_success = true
