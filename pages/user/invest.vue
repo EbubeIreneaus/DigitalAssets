@@ -9,7 +9,7 @@ const plans = ref({
     'premium': { 'plan': 'premium', 'min': 20001, 'max': 100000, 'duration': '1 months', 'roi': 10, 'bonus': 0 },
     'ultra': { 'plan': 'ultra', 'min': 100001, 'max': 1000000, 'duration': '3 months', 'roi': 12, 'bonus': 0 },
     'promo': { 'plan': 'promo', 'min': 1000, 'max': 100000, 'duration': '1 months', 'roi': 5.5, 'bonus': 0 },
-    'visa': { 'plan': 'visa', 'min': 2000, 'max': 1000000, 'duration': '1 months', 'roi': 8.5, 'bonus': 20 },
+    'visa': { 'plan': 'visa', 'min': 2000, 'max': 1000000, 'duration': '2 weeks', 'roi': 8.5, 'bonus': 20 },
 })
 const account = inject('account')
 const url = props.api
