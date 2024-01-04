@@ -28,46 +28,6 @@ if(res.value.charges){
 //     channel: "BTC",
 // });
 
-// const validate_withdrawal = () => {
-//     if (form.amount == '' || form.wallet == '' || form.channel == '' || form.password == '') {
-//         alert("please fill in the form completely before initiating transaction")
-//         return false
-//     }
-//     if (account.value.balance < form.amount) {
-//         alert("insufficient funds on your account balance")
-//         return false
-//     }
-//     return true
-// }
-
-// const initiate = async (e) => {
-//     const sbutton = document.getElementById("sbutton");
-
-//     if (!validate_withdrawal()) {
-//         return false;
-//     }
-//     sbutton.disabled = true;
-//     const { data: res, error: error } = await useFetch(`${url}transaction/withdraw/`, {
-//         method: "post",
-//         watch: false,
-//         body: form,
-//         key: new Date().getTime().toString(),
-//     });
-
-//     if (res.value) {
-//         if (res.value.status == "success") {
-//             withdraw_success.value = true
-//             sbutton.disabled = false
-//             e.target.reset();
-//         } else {
-//             alert("could not initiate this transaction, Error details \n" + res.value.code);
-//             sbutton.disabled = false;
-//         }
-//     } else {
-//         alert("could not initiate this transaction at this moment try again later!!!");
-//         sbutton.disabled = false;
-//     }
-// }
 
 </script>
 
@@ -81,7 +41,7 @@ if(res.value.charges){
                     <p class="bg-white text-black w-fit py-1 px-10 font-semibold rounded-b-lg">{{ coin.name.toUpperCase() }}</p>
                 </div>
                 <div class="mt-5 py-20 mb-5 border-b border-slate-100/50">
-                    <img src="/img/wallet.svg.png" class="w-20 mx-auto object-fit"/>
+                    <img src="~assets/media/wallet.svg.png" class="w-20 mx-auto object-fit"/>
                 </div>
                
                 <div class="text-center">
