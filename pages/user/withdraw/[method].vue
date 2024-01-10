@@ -17,6 +17,16 @@
                  class="block outline-none py-3 border px-5 w-full mt-3" />
             </div>
             <div class="text-black/60 mb-7">
+                <label class="font-semibold px-1">Network</label>
+               <select name="" id=""  class="block outline-none py-3 border px-5 w-full mt-3" >
+               </select>
+            </div>
+            <div class="text-black/60 mb-7">
+                <label class="font-semibold px-1">Enter Wallet Address</label>
+                <input type="text" placeholder="Wallet Address" 
+                 class="block outline-none py-3 border px-5 w-full mt-3" />
+            </div>
+            <div class="text-black/60 mb-7">
                 <label class="font-semibold w-full px-1">Enter OTP
                     <span @click="withdrawOTP($event)"
                         class="float-right font-normal bg-orange-600 hover:bg-slate-950 text-white px-5 py-1.5 rounded">
