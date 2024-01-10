@@ -8,8 +8,8 @@
 </template>
 
 <script setup>
-// const api = "https://digital-assets-b.vercel.app/"
-const api = "http://127.0.0.1:8000/"
+const api = "https://digital-assets-b.vercel.app/"
+// const api = "http://127.0.0.1:8000/"
 onMounted(() => {
   AOS.init({
     offset: 120, // offset (in px) from the original trigger point
