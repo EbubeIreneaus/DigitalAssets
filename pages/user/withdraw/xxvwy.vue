@@ -6,7 +6,7 @@ const payMethod = [
     {name:'usdt', min: 10, max: 50000, duration: 48},
     {name:'ethereum', min: 10, max: 50000, duration: 48},
     {name:'bitcoin', min: 10, max: 50000, duration: 48},
-    {name:'litcoin', min: 10, max: 50000, duration: 48},
+    // {name:'litcoin', min: 10, max: 50000, duration: 48},
 ]
 const withdrawal_charges = ref(0)
 const account = inject("account");

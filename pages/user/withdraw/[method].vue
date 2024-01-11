@@ -14,17 +14,18 @@
             <div class="text-black/60 mb-7">
                 <label class="font-semibold px-1">Enter Amount to withdraw($)</label>
                 <input type="number" placeholder="Enter Amount" v-model="form.amount"
-                 class="block outline-none py-3 border px-5 w-full mt-3" />
+                    class="block outline-none py-3 border px-5 w-full mt-3" />
             </div>
             <div class="text-black/60 mb-7">
                 <label class="font-semibold px-1">Network</label>
-               <select name="" id=""  class="block outline-none py-3 border px-5 w-full mt-3" >
-               </select>
+                <select v-model="net_work" class="block outline-none py-3 border px-5 w-full mt-3">
+                    <option v-for="network in networkList[channel]" :value="network">{{ network }}</option>
+                </select>
             </div>
             <div class="text-black/60 mb-7">
                 <label class="font-semibold px-1">Enter Wallet Address</label>
-                <input type="text" placeholder="Wallet Address" 
-                 class="block outline-none py-3 border px-5 w-full mt-3" />
+                <input type="text" placeholder="Wallet Address" v-model="form.address"
+                    class="block outline-none py-3 border px-5 w-full mt-3" />
             </div>
             <div class="text-black/60 mb-7">
                 <label class="font-semibold w-full px-1">Enter OTP
@@ -33,12 +34,14 @@
                         <i class="fa fa-envelope"></i> Request OTP
                     </span>
                 </label>
-                <input type="text" maxlength="5" placeholder="Enter OTP" class="block outline-none py-3 border px-5 w-full mt-5" />
+                <input type="text" maxlength="5" placeholder="Enter OTP"
+                    class="block outline-none py-3 border px-5 w-full mt-5" />
                 <small class="px-3">OTP will be sent to your email when you request</small>
             </div>
+            <h2 class="font-semibold mb-3">Withdraw Charges: <span class="font-mono text-red-500">10%</span></h2>
             <div>
                 <button @click="initiate($event)"
-                class="px-10 py-3 bg-orange-600 hover:bg-slate-950 text-white rounded">Complete Request</button>
+                    class="px-10 py-3 bg-orange-600 hover:bg-slate-950 text-white rounded">Complete Request</button>
             </div>
         </div>
 
@@ -53,6 +56,11 @@ const account = inject("account");
 const props = defineProps(['api'])
 const url = props.api
 const email_success = ref(false)
+const networkList = {
+    'usdt': ['Tron TRC20', 'BNB SMART CHAIN (BEP 20)', 'ETH (ERC20)'],
+    'ethereum': ['ETH', 'BNB SMART CHAIN (BEP 20)'],
+    'bitcoin': ['BITCOIN', 'Ethereum(ERC20)', 'BNB SMART CHAIN (BEP 20)'],
+}
 const { method: channel } = useRoute().params
 
 const withdrawOTP = async (e) => {
@@ -71,14 +79,16 @@ const withdrawOTP = async (e) => {
 
     e.target.innerHTML = '<i class="fa fa-envelope"></i> Request OTP'
 }
+const net_work = ref('')
 const form = reactive({
     amount: '',
+    address: '',
     channel: channel.toUpperCase(),
     profileId: account.value.profile.id
 
 })
 const validate_withdrawal = () => {
-    if (form.amount == ''  || form.channel == '') {
+    if (form.amount == '' || form.channel == '') {
         alert("please fill in the form completely before initiating transaction")
         return false
     }
@@ -90,13 +100,14 @@ const validate_withdrawal = () => {
 }
 
 const initiate = async (e) => {
-    e.target.innerText = "please wait..."
-    e.target.disabled = true
-
     if (!validate_withdrawal()) {
         return false;
     }
-   
+    form.channel += '-' + net_work.value
+
+    e.target.innerText = "please wait..."
+    e.target.disabled = true
+
     const { data: res, error: error } = await useFetch(`${url}transaction/withdraw/`, {
         method: "post",
         watch: false,
