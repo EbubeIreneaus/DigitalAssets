@@ -38,7 +38,7 @@
                     class="block outline-none py-3 border px-5 w-full mt-5" />
                 <small class="px-3">OTP will be sent to your email when you request</small>
             </div>
-            <h2 class="font-semibold mb-3">Withdraw Charges: <span class="font-mono text-red-500">10%</span></h2>
+            <h2 class="font-semibold mb-3">Withdraw Charges: <span class="font-mono text-red-500">{{charges.charges}}%</span></h2>
             <div>
                 <button @click="initiate($event)"
                     class="px-10 py-3 bg-orange-600 hover:bg-slate-950 text-white rounded">Complete Request</button>
@@ -128,6 +128,9 @@ const initiate = async (e) => {
         sbutton.disabled = false;
     }
 }
+
+const { data: charges, error: error } = await useFetch(`${url}manager/charges/`)
+
 </script>
 
 <style lang="scss" scoped></style>
