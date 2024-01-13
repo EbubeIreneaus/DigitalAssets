@@ -315,7 +315,7 @@ const Register = async (e) => {
 
                     <div class="">
                       <label for="country" class="block mb-2 text-sm font-medium ps-1">Account</label>
-                      <select v-model="form.plan"
+                      <select v-model="form.type"
                         class="bg-gray-50 border border-gray-300 sm:text-sm 
                         appearance-none outline-none w-full p-2.5 capitalize font-semibold">
                         <option :value="plan" v-for="(plan, index) in plans" :key="index">
