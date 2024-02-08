@@ -4,6 +4,7 @@
             <NuxtLoadingIndicator />
             <NuxtPage :api="api" /> <!-- https://digital-assets-b.vercel.app/ -->
         </NuxtLayout>
+    
     </div>
 </template>
 
