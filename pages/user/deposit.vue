@@ -21,7 +21,7 @@
                     <div class="grid md:grid-cols-2 gap-y-7 gap-x-3">
                         <label class="flex items-center border border-black justify-between h-24 px-5 max-w-sm "
                             :class="{ 'border-2 border-slate-950  rounded-lg': deposit.channel == x.name }"
-                            v-for="x in paymentMethod">
+                            v-for="x, index in paymentMethod" :key="index" >
                             <input type="radio" class="hidden peer" :value="x.name" v-model="deposit.channel">
                             <p class="font-semibold">{{ x.name }}</p>
                             <i
