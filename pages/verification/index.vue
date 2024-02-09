@@ -1,7 +1,8 @@
 <template>
     <div class="border  max-w-lg !w-full  min-h-[200px] max-h-screen overflow-y-scroll py-5 shadow-md shadow-black/40 bg-slate-100">
         <!-- verification concent -->
-        <div class="hidden">
+		<Transition>
+        <div class="" v-if="component == 'intro'">
             <div>
                 <div>
                     <div class="border p-1 bg-orange-500 rounded-full w-fit mx-auto">
@@ -12,9 +13,10 @@
                         to access the full range of digital assets product and services
                     </p>
                     <div class="w-full my-3">
-                        <button 
-                        class="border block mx-auto px-12 py-2 rounded-xl bg-orange-500 text-white hover:bg-orange-400"
+                        <button @click="move('intro', $event)"
+                        class="border block mx-auto px-12 py-2 group rounded-xl bg-orange-500 disabled:cursor-not-allowed text-white hover:bg-orange-400"
                         >
+						<i class="fa fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
                         Verify now
                         </button>
                         <p class="text-center my-3 font-semibold space-x-2 underline underline-offset-1 text-orange-300"><nuxt-link to="/user/">cancel</nuxt-link></p>
@@ -22,9 +24,11 @@
                 </div>
             </div>
         </div>
+		</Transition>
 
         <!-- verification requirement list -->
-        <div class="hidden">
+		<Transition>
+        <div class="" v-if="component == 'requirements'">
             <div class="px-4">
                 <h2>Requiremnts</h2>
                 <ul class="text-black/50 font-semibold text-sm *:!mb-4 my-3 px-4">
@@ -76,71 +80,93 @@
                 <br />
                 <div class="w-full ">
                     <p class="text-sm mt-2 mb-4 text-black/50"><i class="fa fa-history"></i> Review time: 10 days</p>
-                    <button
-                     class="max-w-md w-full mx-auto py-2 text-center text-white bg-orange-500 hover:bg-orange-400 rounded-lg">start now</button>
+					<div class="w-full my-3">
+                        <button @click="move('requirements', $event)"
+                        class="border block mx-auto px-12 py-2 group rounded-xl bg-orange-500 disabled:cursor-not-allowed text-white hover:bg-orange-400"
+                        >
+						<i class="fa fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
+                        start now
+                        </button>
+                        <p class="text-center my-3 font-semibold space-x-2 underline underline-offset-1 text-orange-300"><nuxt-link to="/user/">cancel</nuxt-link></p>
+                    </div>
                 </div>
             </div>
         </div>
+		</Transition>
 
         <!-- country and username form -->
-        <div class="px-5 hidden">
+		<Transition>
+
+        <div class="px-5" v-if="component == 'user'">
             <div>
                 <div>
                     <label for="" class="text-sm font-semibold px-1 ">Country of Issue:</label>
-                    <select name="" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
+                    <select v-model="form.country" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
                         <option :value="x" v-for="x,index in countryList" :key="index">{{ x }}</option>
                     </select>
                 </div>
                 <div class="grid grid-cols-2 my-7 gap-5">
                     <div class="w-full">
                     <label for="" class="text-sm font-semibold px-1 ">Firstname:</label>
-                    <input type="text" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
+                    <input type="text" v-model="form.firstname" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
                     </div>
 
                     <div class="w-full">
                     <label for="" class="text-sm font-semibold px-1 ">Lastname:</label>
-                    <input type="text" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
+                    <input type="text" v-model="form.lastname" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
                     </div>
 
                     <div class="w-full">
                     <label for="" class="text-sm font-semibold px-1 ">Middlename:</label>
-                    <input type="text" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
+                    <input type="text" v-model="form.middlename" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
                     </div>
 
                     <div class="w-full">
                     <label for="" class="text-sm font-semibold px-1 ">Date of Birth:</label>
-                    <input type="date" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
+                    <input type="date" v-model="form.dob" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
                     </div>
                 </div>
                 <h2 class="font-bold text-2xl text-black/80 my-3">Additional Information</h2>
                 <div>
                     
                     <label for="" class="text-sm font-semibold px-1 ">Residential address:</label>
-                    <input type="text" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
+                    <input type="text" v-model="form.address" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
                      
                 </div>
                 <div class="grid grid-cols-2 my-7 gap-5">
                     <div class="w-full">
                     <label for="" class="text-sm font-semibold px-1 ">postal code:</label>
-                    <input type="text" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
+                    <input type="text" v-model="form.postal" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
                     </div>
 
                     <div class="w-full">
                     <label for="" class="text-sm font-semibold px-1 ">city:</label>
-                    <input type="text" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
+                    <input type="text" v-model="form.city" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
                     </div>
                 </div>
 
+				<div class="w-full my-3">
+                        <button @click="move('user', $event)"
+                        class="border block mx-auto px-12 py-2 group rounded-xl bg-orange-500 disabled:cursor-not-allowed text-white hover:bg-orange-400"
+                        >
+						<i class="fa fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
+                        next
+                        </button>
+                        <p class="text-center my-3 font-semibold space-x-2 underline underline-offset-1 text-orange-300"><nuxt-link to="/user/">cancel</nuxt-link></p>
+                    </div>
                 
             </div>
         </div>
+		</Transition>
 
         <!-- identification selection -->
-        <div class="px-5 hidden">
+		<Transition>
+
+        <div class="px-5" v-if="component == 'docs_selection'">
             <div>
                 <div class="mb-7">
                     <label for="" class="text-sm font-semibold px-1 ">Country of Issue:</label>
-                    <input readonly value="Nigeria" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
+                    <input readonly :value="form.country" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
                 </div>
                 <div>
                     <div class="mb-7">
@@ -152,11 +178,11 @@
                     <div>
                         <ul class="">
                             <li>
-                                <label class="flex justify-between items-center py-3 mb-3 border font-bold text-black/50 px-3">
+                                <label class="flex justify-between items-center py-5 mb-3 border font-bold text-black/50 px-3">
                                     
                                    <div>
                                     <p class="text-sm">Goverment Issue ID card</p>
-                                    <small class="text-xs">NIN slip/National ID card</small>
+                                    
                                    </div>
                                    <input type="radio" class="hidden peer"  value="NIN" v-model="form.id">
                                    <i
@@ -190,16 +216,26 @@
                     <br />
                 <div class="w-full ">
                     <!-- <p class="text-sm mt-2 mb-4 text-black/50"><i class="fa fa-history"></i> Review time: 10 days</p> -->
-                    <button
-                     class="max-w-md w-full mx-auto py-2 text-center text-white bg-orange-500 hover:bg-orange-400 rounded-lg">Next</button>
+					<div class="w-full my-3">
+                        <button @click="move('docs_selection', $event)"
+                        class="border block mx-auto px-12 py-2 group rounded-xl bg-orange-500 disabled:cursor-not-allowed text-white hover:bg-orange-400"
+                        >
+						<i class="fa fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
+                        next
+                        </button>
+                        <p class="text-center my-3 font-semibold space-x-2 underline underline-offset-1 text-orange-300"><nuxt-link to="/user/">cancel</nuxt-link></p>
+                    </div>
                 </div>
                 </div>
             </div>
         </div>
+		</Transition>
 
 		<!-- upload Identificatin requirement
 		 -->
-		 <div class="px-5 hidden" >
+		 <Transition>
+
+		 <div class="px-5" v-if="component == 'docs_upload'">
 			<div>
 				<h2 class="text-2xl font-bold ">Identity Verification</h2><br>
 				<p class="font-semibold">Take A photo of Your ID card </p>
@@ -218,21 +254,30 @@
 					<p class="text-sm font-bold my-2">File size must be between <b>10kb</b> to <b>1mb</b> in .jpg/.png/.jpeg format</p>
 				</div>
 				<div>
-					<input type="file" name="" id="" capture="environment" accept="image/.jpg,.png,.jpeg" class="w-full border py-2">
+					<input type="file" @change="addDocsImg($event)" capture="environment" accept="image/.jpg,.png,.jpeg" class="w-full border py-2">
 				</div>
 				<div class="w-full ">
                     <!-- <p class="text-sm mt-2 mb-4 text-black/50"><i class="fa fa-history"></i> Review time: 10 days</p> -->
-                    <button
-                     class="max-w-md w-full mx-auto py-2 text-center text-white bg-orange-500 hover:bg-orange-400 rounded-lg">
-					 proceed to selfie
-					 </button>
+                    
+					<div class="w-full my-3">
+                        <button @click="move('docs_upload', $event)"
+                        class="border block mx-auto px-12 py-2 group rounded-xl bg-orange-500 disabled:cursor-not-allowed text-white hover:bg-orange-400"
+                        >
+						<i class="fa fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
+                        proceed to selfie
+                        </button>
+                        <p class="text-center my-3 font-semibold space-x-2 underline underline-offset-1 text-orange-300"><nuxt-link to="/user/">cancel</nuxt-link></p>
+                    </div>
                 </div>
 			</div>
 		 </div>
+		 </Transition>
 
 		 <!-- upload user selfie
 		 -->
-		 <div class="px-5">
+		 <Transition>
+
+		 <div class="px-5" v-if="component == 'selfie_upload'">
 			<div>
 				<h2 class="text-2xl font-bold ">Take a Selfie</h2><br>
 				<p class="font-semibold">Example:</p>
@@ -250,24 +295,48 @@
 					<p class="text-sm font-bold my-2">File size must be between <b>10kb</b> to <b>1mb</b> in .jpg/.png/.jpeg format</p>
 				</div>
 				<div class="mb-4">
-					<input type="file" name="" id="" capture="environment" accept="image/.jpg,.png,.jpeg" class="w-full border py-2">
+					<input type="file" @change="addSelfieImg($event)" id="" capture="environment" accept="image/.jpg,.png,.jpeg" class="w-full border py-2">
 				</div>
 				<div class="w-full ">
                     <!-- <p class="text-sm mt-2 mb-4 text-black/50"><i class="fa fa-history"></i> Review time: 10 days</p> -->
-                    <button
-                     class="max-w-md w-full mx-auto py-2 text-center text-white bg-orange-500 hover:bg-orange-400 rounded-lg">
-					 submit  request
-					 </button>
+                    <div class="w-full my-3">
+                        <button @click="submit($event)"
+                        class="border block mx-auto px-12 py-2 group rounded-xl bg-orange-500 disabled:cursor-not-allowed text-white hover:bg-orange-400"
+                        >
+						<i class="fa fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
+                        submit request
+                        </button>
+                        <p class="text-center my-3 font-semibold space-x-2 underline underline-offset-1 text-orange-300"><nuxt-link to="/user/">cancel</nuxt-link></p>
+                    </div>
                 </div>
 			</div>
 		 </div>
+		 </Transition>
+
+		<!-- success or error -->
+		<div class="px-5" v-if="component == 'success'">
+			<div class="text-center">
+				<p class="w-fit mx-auto border p-4 rounded-full bg-green-500 text-white"><i class="fa fa-thumbs-up fa-2xl"></i></p>
+				<h2 class="text-3xl font-bold my-4">Verification in progess</h2>
+				<p class="font-semibold text-black/60 mb-5">you will be notify once we have review your identity verification</p>
+				<NuxtLink to="/user/"
+                     class="max-w-md w-full mx-auto py-2 block mb-5 text-center text-white bg-orange-500 hover:bg-orange-400 rounded-lg">
+					Ok
+					 </NuxtLink>
+			</div>
+		</div>
     </div>
 </template>
 
 <script setup lang="ts">
+import axios from 'axios'
 definePageMeta({
     layout: 'verification'
 })
+const props = defineProps(['api'])
+const url = props.api
+const account = inject("account")
+type comp = 'intro'|'requirements'| 'user' | 'docs_selection'| 'docs_upload'|'selfie_upload'|'success'
 const countryList = [
 	"Afghanistan",
 	"Albania",
@@ -520,9 +589,94 @@ const countryList = [
 	"Åland Islands"
 ];
 
+const formData = new FormData()
+
+const component = ref<comp>('intro')
 const form = reactive({
-    id: ''
+    id: 'NIN',
+	firstname: '',
+	lastname:'',
+	middlename: '',
+	dob: '',
+	address: '',
+	postal: '',
+	city: '',
+	country: '',
+	
+
 })
+
+function validateUser() : boolean{
+	if(form.firstname == '' || form.lastname == "" || form.dob == ''|| form.country == '' || form.city == ''){
+		return false
+	}
+	return true
+}
+
+function addDocsImg(e: any) : void{
+	const file = e.target.files[0]
+	formData.append('IDCard', file)
+}
+
+function addSelfieImg(e: any) : void{
+	const file = e.target.files[0]
+	formData.append('selfie', file)
+}
+
+
+function move(comp:comp, e:any) : void{
+	e.target.disabled = true
+	const timeout = setTimeout(()=>{
+		switch (comp) {
+			case 'intro':
+				component.value = 'requirements'
+				break;
+			case 'requirements':
+				component.value = 'user'
+				break;
+			case 'user':
+				validateUser()?component.value = 'docs_selection': alert('Please fill in all information correctly!!!')
+				break;
+			case 'docs_selection':
+				component.value = 'docs_upload'
+				break;
+			case 'docs_upload':
+				component.value = 'selfie_upload'
+				break;
+			default:
+				break;
+		}
+		e.target.disabled = false
+		clearTimeout(timeout)
+	}, 3000)
+}
+function submit(e:any): void{
+	e.target.disabled = true
+	formData.append('firstname', form.firstname)
+	formData.append('lastname', form.lastname)
+	formData.append('middlename', form.middlename)
+	formData.append('dob', form.dob)
+	formData.append('country', form.country)
+	formData.append('address', form.address)
+	formData.append('city', form.city)
+	formData.append('postal', form.postal)
+	formData.append('id', form.id)
+
+	const res = axios.post(`${url}`, formData, {
+		headers: {
+			'Content-Type': 'multipart/form-data'
+		}
+	})
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+.v-enter-active{
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
