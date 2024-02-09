@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full min-h-screen flex justify-center items-center bg-slate-200">
+    <div class="w-full min-h-screen flex  bg-slate-200">
             <slot></slot>
        
     </div>
@@ -24,10 +24,17 @@ const { data: res, pending, error } = await useFetch(`${url}account/details/${pr
 })
 if (res.value.profile) {
     account.value = res.value
+}else{
+    useRouter().push('/auth/login')
 }
+    provide('account', account.value)
+    provide('username', account.value.profile.user.username)
+    provide('email', account.value.profile.user.email)
 
 
-provide('account', account)
+onMounted(() => {
+    
+})
 </script>
 
 <style lang="scss" scoped>

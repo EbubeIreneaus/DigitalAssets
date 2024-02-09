@@ -1,5 +1,5 @@
 <template>
-    <div class="border  max-w-lg !w-full  min-h-[200px] max-h-screen overflow-y-scroll py-5 shadow-md shadow-black/40 bg-slate-100">
+    <div class="border  max-w-lg !w-full  min-h-[300px] max-h-screen mx-auto py-[50px] overflow-y-scroll py-5 shadow-md shadow-slate-100">
         <!-- verification concent -->
 		<Transition>
         <div class="" v-if="component == 'intro'">
@@ -335,7 +335,8 @@ definePageMeta({
 })
 const props = defineProps(['api'])
 const url = props.api
-const account = inject("account")
+const username = inject("username")
+const email = inject("email")
 type comp = 'intro'|'requirements'| 'user' | 'docs_selection'| 'docs_upload'|'selfie_upload'|'success'
 const countryList = [
 	"Afghanistan",
@@ -650,7 +651,7 @@ function move(comp:comp, e:any) : void{
 		clearTimeout(timeout)
 	}, 3000)
 }
-function submit(e:any): void{
+async function submit(e:any){
 	e.target.disabled = true
 	formData.append('firstname', form.firstname)
 	formData.append('lastname', form.lastname)
@@ -661,12 +662,25 @@ function submit(e:any): void{
 	formData.append('city', form.city)
 	formData.append('postal', form.postal)
 	formData.append('id', form.id)
-
-	const res = axios.post(`${url}`, formData, {
+	formData.append('username', username as string)
+	formData.append('email', email as string)
+	
+	try{
+	const res = await axios.post(`${url}manager/verify_me/`, formData, {
 		headers: {
 			'Content-Type': 'multipart/form-data'
 		}
 	})
+
+	if(res.data.status == 'success'){
+		component.value = 'success'
+	}else{
+		alert('Could Not perform request at the moment! please try again later')
+	}
+} catch(err){
+	e.target.disabled = false
+	throw new Error ('could not make request. details: '+ err)
+}
 }
 </script>
 

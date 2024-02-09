@@ -121,7 +121,14 @@ onMounted(() => {
                             <div class="text-center">
                                 <p class="capitalize font-semibold text-white">{{ account.profile.user.first_name }} {{
                                     account.profile.user.last_name }}</p>
-                                <small class="font-serif text-white block my-2">online</small>
+                                <small v-if="account.profile.verified"
+                                class="font-serif text-xs block my-2 text-green-500  py-0.5 px-4 rounded-full bg-slate-900/50 w-fit mx-auto">
+                                verified <i class="fa fa-certificate"></i>
+                                </small>
+                                <small v-else
+                                class="font-serif text-xs block my-2 text-yellow-500  py-0.5 px-4 rounded-full bg-slate-900/50 w-fit mx-auto">
+                                unverified
+                                </small>
                                 <small
                                     class="block font-mono font-bold !text-black/70 text-center  px-10 py-2.5 rounded-2xl bg-white">
                                     ${{ account.balance }}</small>
@@ -135,6 +142,12 @@ onMounted(() => {
                                 class="py-5 rounded-2xl hover:bg-slate-100 w-fit px-7 font-sans">
                                 <i :class="x.icon" class="fa-lg"></i>
                                 <p class="capitalize side-links  py-3 px-2 rounded-e-full">{{ x.title }}</p>
+                            </nuxt-link>
+
+                            <nuxt-link to="/verification/" @click="toogleSidebar" v-if="account.profile.enable_verification"
+                                class="py-5 rounded-2xl hover:bg-slate-100 w-fit px-7 font-sans">
+                                <i class="fas fa-certificate"></i>
+                                <p class="capitalize side-links  py-3 px-2 rounded-e-full">Verify me</p>
                             </nuxt-link>
                         </div>
 
