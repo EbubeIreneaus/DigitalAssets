@@ -24,7 +24,11 @@ const { data: res, pending, error } = await useFetch(`${url}account/details/${pr
 })
 if (res.value.profile) {
     account.value = res.value
+
+}else if(!res.value.profile.enable_verification){
+    useRouter().push('/user/')
 }else{
+    
     useRouter().push('/auth/login')
 }
     provide('account', account.value)
