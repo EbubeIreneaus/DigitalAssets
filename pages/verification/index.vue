@@ -1,15 +1,15 @@
 <template>
-    <div class="border  max-w-lg !w-full  min-h-[300px] max-h-screen mx-auto py-[50px] overflow-y-scroll py-5 shadow-md shadow-slate-100">
+    <div class="border  max-w-lg !w-full  min-h-[300px] max-h-screen mx-auto py-[50px] overflow-y-scroll shadow-md shadow-slate-100">
         <!-- verification concent -->
 		<Transition>
-        <div class="" v-if="component == 'intro'">
+        <div class="mt-10" v-if="component == 'intro'">
             <div>
                 <div>
                     <div class="border p-1 bg-orange-500 rounded-full w-fit mx-auto">
                         <i class="fa fa-warning  p-1 text-white"></i>
                     </div>
                     <p class="px-5 py-5 text-center font-bold text-black/60">
-                        All new and exisiting user are required to complete intermediate identity verification
+                        Complete intermediate identity verification
                         to access the full range of digital assets product and services
                     </p>
                     <div class="w-full my-3">
@@ -30,7 +30,7 @@
 		<Transition>
         <div class="" v-if="component == 'requirements'">
             <div class="px-4">
-                <h2>Requiremnts</h2>
+                <h2 class="font-semibold">Requirements</h2>
                 <ul class="text-black/50 font-semibold text-sm *:!mb-4 my-3 px-4">
                     <li>
                         <i class="fa fa-user"></i> &nbsp;
@@ -46,7 +46,7 @@
                     </li>
                 </ul>
 
-                <h2>Features &amp; Limits</h2>
+                <h2 class="font-semibold">Features &amp; Limits</h2>
                 <ul class="text-black/50 font-semibold text-sm *:!mb-4 my-3 px-4">
                     <li class="flex justify-between">
                        <span>Deposit</span>
@@ -59,7 +59,7 @@
                     
                 </ul>
 
-                <h2>Trading Transaction Limits</h2>
+                <h2 class="font-semibold">Trading Transaction Limits</h2>
                 <ul class="text-black/50 font-semibold text-sm *:!mb-4 my-3 px-4">
                 
                     <li class="flex justify-between">
@@ -68,7 +68,7 @@
                     </li>
                     
                 </ul>
-                <h2>Crypto Limit</h2>
+                <h2 class="font-semibold">Crypto Limit</h2>
                 <ul class="text-black/50 font-semibold text-sm *:!mb-4 my-3 px-4">
                 
                     <li class="flex justify-between">
