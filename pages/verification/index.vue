@@ -59,11 +59,11 @@
                     
                 </ul>
 
-                <h2>P2P Transaction Limits</h2>
+                <h2>Trading Transaction Limits</h2>
                 <ul class="text-black/50 font-semibold text-sm *:!mb-4 my-3 px-4">
                 
                     <li class="flex justify-between">
-                       <span>P2P</span> &nbsp;&nbsp;
+                       <span>Trading</span> &nbsp;&nbsp;
                         <span><b>Unlimited</b></span>
                     </li>
                     
@@ -254,7 +254,7 @@
 					<p class="text-sm font-bold my-2">File size must be between <b>10kb</b> to <b>1mb</b> in .jpg/.png/.jpeg format</p>
 				</div>
 				<div>
-					<input type="file" @change="addDocsImg($event)" capture="environment" accept="image/.jpg,.png,.jpeg" class="w-full border py-2">
+					<input type="file" @change="addDocsImg($event)" accept="image/*" capture="environment"  class="w-full border py-2">
 				</div>
 				<div class="w-full ">
                     <!-- <p class="text-sm mt-2 mb-4 text-black/50"><i class="fa fa-history"></i> Review time: 10 days</p> -->
@@ -295,7 +295,7 @@
 					<p class="text-sm font-bold my-2">File size must be between <b>10kb</b> to <b>1mb</b> in .jpg/.png/.jpeg format</p>
 				</div>
 				<div class="mb-4">
-					<input type="file" @change="addSelfieImg($event)" id="" capture="environment" accept="image/.jpg,.png,.jpeg" class="w-full border py-2">
+					<input type="file" @change="addSelfieImg($event)" accept="image/*" capture="user" class="w-full border py-2">
 				</div>
 				<div class="w-full ">
                     <!-- <p class="text-sm mt-2 mb-4 text-black/50"><i class="fa fa-history"></i> Review time: 10 days</p> -->
