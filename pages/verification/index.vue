@@ -602,7 +602,7 @@ const form = reactive({
 	address: '',
 	postal: '',
 	city: '',
-	country: '',
+	country: 'Afghanistan',
 	
 
 })
