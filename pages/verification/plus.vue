@@ -29,36 +29,29 @@
         <!-- verification requirement list -->
 		<Transition>
         <div class="" v-if="component == 'requirements'">
-			<div class="flex gap-10 px-10 text-sm font-bold my-5 *:bg-slate-50 *:px-7 *:py-px *:rounded-full">
-				<NuxtLink to="/verification/" class="border  px-7 py-px rounded-full text-green-500">verified</NuxtLink>
-				<NuxtLink to="/verification/plus" >verified plus</NuxtLink>
+			<div class="flex gap-10 px-10  text-sm font-bold my-5 *:bg-slate-50 *:px-7 *:py-px *:rounded-full">
+				<NuxtLink to="/verification/plus"  class="border border-orange-500 px-7 py-px rounded-full text-green-500">verified plus</NuxtLink>
+				<NuxtLink to="/verification/">verified</NuxtLink>
 			</div>
             <div class="px-4">
                 <h2 class="font-semibold">Requirements</h2>
                 <ul class="text-black/50 font-semibold text-sm *:!mb-4 my-3 px-4">
                     <li>
-                        <i class="fa fa-user"></i> &nbsp;
-                        <span>Personnal Information</span>
+                        <i class="fas fa-map-marker-alt"></i> &nbsp;
+                        <span>Proof Of Address</span>
                     </li>
-                    <li>
-                        <i class="fa fa-id-card"></i> &nbsp;
-                        <span>Goverment-Issued Id</span>
-                    </li>
-                    <li>
-                        <i class="fa fa-camera"></i> &nbsp;
-                        <span>Facial Recognition</span>
-                    </li>
+                   
                 </ul>
 
                 <h2 class="font-semibold">Features &amp; Limits</h2>
                 <ul class="text-black/50 font-semibold text-sm *:!mb-4 my-3 px-4">
                     <li class="flex justify-between">
                        <span>Deposit</span>
-                        <span><b>$50k</b> Daily</span>
+                        <span><b>$200k</b> Daily</span>
                     </li>
                     <li class="flex justify-between">
                        <span>Withdraw</span> &nbsp;&nbsp;
-                        <span><b>$50k</b> Daily</span>
+                        <span><b>$200k</b> Daily</span>
                     </li>
                     
                 </ul>
@@ -103,33 +96,7 @@
 
         <div class="px-5" v-if="component == 'user'">
             <div>
-                <div>
-                    <label for="" class="text-sm font-semibold px-1 ">Country of Issue:</label>
-                    <select v-model="form.country" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
-                        <option :value="x" v-for="x,index in countryList" :key="index">{{ x }}</option>
-                    </select>
-                </div>
-                <div class="grid grid-cols-2 my-7 gap-5">
-                    <div class="w-full">
-                    <label for="" class="text-sm font-semibold px-1 ">Firstname:</label>
-                    <input type="text" v-model="form.firstname" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
-                    </div>
-
-                    <div class="w-full">
-                    <label for="" class="text-sm font-semibold px-1 ">Lastname:</label>
-                    <input type="text" v-model="form.lastname" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
-                    </div>
-
-                    <div class="w-full">
-                    <label for="" class="text-sm font-semibold px-1 ">Middlename:</label>
-                    <input type="text" v-model="form.middlename" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
-                    </div>
-
-                    <div class="w-full">
-                    <label for="" class="text-sm font-semibold px-1 ">Date of Birth:</label>
-                    <input type="date" v-model="form.dob" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
-                    </div>
-                </div>
+              
                 <h2 class="font-bold text-2xl text-black/80 my-3">Additional Information</h2>
                 <div>
                     
@@ -163,77 +130,6 @@
         </div>
 		</Transition>
 
-        <!-- identification selection -->
-		<Transition>
-
-        <div class="px-5" v-if="component == 'docs_selection'">
-            <div>
-                <div class="mb-7">
-                    <label for="" class="text-sm font-semibold px-1 ">Country of Issue:</label>
-                    <input readonly :value="form.country" class="appearance-none outline-none border rounded py-2 ps-3 w-full mt-1">
-                </div>
-                <div>
-                    <div class="mb-7">
-                        <p class="font-bold text-sm text-black text-center mb-1">Use a valid goverment-issued identity document</p>
-                        <p class="font-semibold text-sm text-black/50 text-center">
-                            only the following document listed bellow will be accepted, all other document will be rejected
-                        </p>
-                    </div><br>
-                    <div>
-                        <ul class="">
-                            <li>
-                                <label class="flex justify-between items-center py-5 mb-3 border font-bold text-black/50 px-3">
-                                    
-                                   <div>
-                                    <p class="text-sm">Goverment Issue ID card</p>
-                                    
-                                   </div>
-                                   <input type="radio" class="hidden peer"  value="NIN" v-model="form.id">
-                                   <i
-                                class="fas fa-check-circle peer-checked:text-orange-500"></i>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="flex justify-between items-center py-5 mb-3 border font-bold text-black/50 px-3">
-                                    
-                                   <div>
-                                    <p class="text-sm">Passport</p>
-                                   </div>
-                                   <input type="radio" class="hidden peer"  value="passport" v-model="form.id">
-                                   <i
-                                class="fas fa-check-circle peer-checked:text-orange-500"></i>
-                                </label>
-                            </li>
-                            <li>
-                                <label class="flex justify-between items-center py-5 mb-3 border font-bold text-black/50 px-3">
-                                    
-                                   <div>
-                                    <p class="text-sm">Drivers Lincence</p>
-                                   </div>
-                                   <input type="radio" class="hidden peer"  value="lincence" v-model="form.id">
-                                   <i
-                                class="fas fa-check-circle peer-checked:text-orange-500"></i>
-                                </label>
-                            </li>
-                        </ul>
-                    </div>
-                    <br />
-                <div class="w-full ">
-                    <!-- <p class="text-sm mt-2 mb-4 text-black/50"><i class="fa fa-history"></i> Review time: 10 days</p> -->
-					<div class="w-full my-3">
-                        <button @click="move('docs_selection', $event)"
-                        class="border block mx-auto px-12 py-2 group rounded-xl bg-orange-500 disabled:cursor-not-allowed text-white hover:bg-orange-400"
-                        >
-						<i class="fa fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
-                        next
-                        </button>
-                        <p class="text-center my-3 font-semibold space-x-2 underline underline-offset-1 text-orange-300"><nuxt-link to="/user/">cancel</nuxt-link></p>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-		</Transition>
 
 		<!-- upload Identificatin requirement
 		 -->
@@ -241,19 +137,19 @@
 
 		 <div class="px-5" v-if="component == 'docs_upload'">
 			<div>
-				<h2 class="text-2xl font-bold ">Identity Verification</h2><br>
-				<p class="font-semibold">Take A photo of Your ID card </p>
+				<h2 class="text-2xl font-bold ">Address Verification</h2><br>
+				<p class="font-semibold">Take A photo of any utility bill (not older than three months) </p>
 				<div>
 
 				</div>
 				<div>
 					<ul class="px-4 py-5 *:text-sm  *:mb-2.5 *:font-semibold text-black/80">
-						<li> <i class="fa fa-check text-green-500 fa-lg"></i> &nbsp; Goverment Issued</li>
-						<li> <i class="fa fa-check text-green-500 fa-lg"></i> &nbsp; Original full size, unedited docs</li>
-						<li> <i class="fa fa-check text-green-500 fa-lg"></i> &nbsp; place document against a single colourd background</li>
-						<li> <i class="fa fa-check text-green-500 fa-lg"></i> &nbsp; readable well-lit coloured image</li>
-						<li> <i class="fa fa-close text-red-500 fa-lg"></i> &nbsp; no black and white</li>
-						<li> <i class="fa fa-close text-red-500 fa-lg"></i> &nbsp; no edited or expire documents</li>
+						<li> <i class="fa fa-check text-green-500 fa-lg"></i> &nbsp; Electricity bill</li>
+						<li> <i class="fa fa-check text-green-500 fa-lg"></i> &nbsp; water bill</li>
+						<li> <i class="fa fa-check text-green-500 fa-lg"></i> &nbsp; statement of account</li>
+						<li> <i class="fa fa-check text-green-500 fa-lg"></i> &nbsp; waste bill</li>
+						<li> <i class="fa fa-check text-green-500 fa-lg"></i> &nbsp; service appartment reciept</li>
+						<!-- <li> <i class="fa fa-close text-red-500 fa-lg"></i> &nbsp; no edited or expire documents</li> -->
 					</ul>
 					<p class="text-sm font-bold my-2">File size must be between <b>10kb</b> to <b>1mb</b> in .jpg/.png/.jpeg format</p>
 				</div>
@@ -264,51 +160,11 @@
                     <!-- <p class="text-sm mt-2 mb-4 text-black/50"><i class="fa fa-history"></i> Review time: 10 days</p> -->
                     
 					<div class="w-full my-3">
-                        <button @click="move('docs_upload', $event)"
-                        class="border block mx-auto px-12 py-2 group rounded-xl bg-orange-500 disabled:cursor-not-allowed text-white hover:bg-orange-400"
-                        >
-						<i class="fa fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
-                        proceed to selfie
-                        </button>
-                        <p class="text-center my-3 font-semibold space-x-2 underline underline-offset-1 text-orange-300"><nuxt-link to="/user/">cancel</nuxt-link></p>
-                    </div>
-                </div>
-			</div>
-		 </div>
-		 </Transition>
-
-		 <!-- upload user selfie
-		 -->
-		 <Transition>
-
-		 <div class="px-5" v-if="component == 'selfie_upload'">
-			<div>
-				<h2 class="text-2xl font-bold ">Take a Selfie</h2><br>
-				<p class="font-semibold">Example:</p>
-				<div>
-					<img src="/img/verify-selfie.jpg" class="w-28 object-cover">
-				</div>
-				<div>
-					<ul class="px-4 py-5 *:text-sm  *:mb-2.5 *:font-semibold text-black/80">
-						<li> <i class="fa fa-check text-green-500 fa-lg"></i> A selfie of yourself with a neutral expression</li>
-						<li> <i class="fa fa-check text-green-500 fa-lg"></i> make sure your whole face is visible, centered and your eyes are open</li>
-
-						<li> <i class="fa fa-close text-red-500 fa-lg"></i> Do not hide or alter any part of your face</li>
-						<li> <i class="fa fa-close text-red-500 fa-lg"></i> &nbsp; Do not crop your ID or use a screenshot of your id</li>
-					</ul>
-					<p class="text-sm font-bold my-2">File size must be between <b>10kb</b> to <b>1mb</b> in .jpg/.png/.jpeg format</p>
-				</div>
-				<div class="mb-4">
-					<input type="file" @change="addSelfieImg($event)" accept="image/*" capture="user" class="w-full border py-2">
-				</div>
-				<div class="w-full ">
-                    <!-- <p class="text-sm mt-2 mb-4 text-black/50"><i class="fa fa-history"></i> Review time: 10 days</p> -->
-                    <div class="w-full my-3">
                         <button @click="submit($event)"
                         class="border block mx-auto px-12 py-2 group rounded-xl bg-orange-500 disabled:cursor-not-allowed text-white hover:bg-orange-400"
                         >
 						<i class="fa fa-spinner animate-spin !hidden group-disabled:!inline-block"></i>
-                        submit request
+                        verify now
                         </button>
                         <p class="text-center my-3 font-semibold space-x-2 underline underline-offset-1 text-orange-300"><nuxt-link to="/user/">cancel</nuxt-link></p>
                     </div>
@@ -316,6 +172,7 @@
 			</div>
 		 </div>
 		 </Transition>
+
 
 		<!-- success or error -->
 		<div class="px-5" v-if="component == 'success'">
@@ -339,10 +196,10 @@ definePageMeta({
 })
 const props = defineProps(['api'])
 const url = props.api
-const account: any = inject("account")
+
 const username = inject("username")
 const email = inject("email")
-type comp = 'intro'|'requirements'| 'user' | 'docs_selection'| 'docs_upload'|'selfie_upload'|'success'
+type comp = 'intro'|'requirements'| 'user' | 'docs_upload'|'success'
 const countryList = [
 	"Afghanistan",
 	"Albania",
@@ -597,23 +454,18 @@ const countryList = [
 
 const formData = new FormData()
 
-const component = ref<comp>('intro')
+const component = ref<comp>('requirements')
 const form = reactive({
-    id: 'NIN',
-	firstname: '',
-	lastname:'',
-	middlename: '',
-	dob: '',
 	address: '',
 	postal: '',
 	city: '',
-	country: 'Afghanistan',
+	// country: 'Afghanistan',
 	
 
 })
 
 function validateUser() : boolean{
-	if(form.firstname == '' || form.lastname == "" || form.dob == ''|| form.country == '' || form.city == ''){
+	if( form.address =="" || form.city == ''){
 		return false
 	}
 	return true
@@ -623,12 +475,6 @@ function addDocsImg(e: any) : void{
 	const file = e.target.files[0]
 	formData.append('IDCard', file)
 }
-
-function addSelfieImg(e: any) : void{
-	const file = e.target.files[0]
-	formData.append('selfie', file)
-}
-
 
 function move(comp:comp, e:any) : void{
 	e.target.disabled = true
@@ -641,14 +487,8 @@ function move(comp:comp, e:any) : void{
 				component.value = 'user'
 				break;
 			case 'user':
-				validateUser()?component.value = 'docs_selection': alert('Please fill in all information correctly!!!')
-				break;
-			case 'docs_selection':
-				component.value = 'docs_upload'
-				break;
-			case 'docs_upload':
-				component.value = 'selfie_upload'
-				break;
+				validateUser()?component.value = 'docs_upload': alert('Please fill in all information correctly!!!')
+				break
 			default:
 				break;
 		}
@@ -658,20 +498,15 @@ function move(comp:comp, e:any) : void{
 }
 async function submit(e:any){
 	e.target.disabled = true
-	formData.append('firstname', form.firstname)
-	formData.append('lastname', form.lastname)
-	formData.append('middlename', form.middlename)
-	formData.append('dob', form.dob)
-	formData.append('country', form.country)
+	// formData.append('country', form.country)
 	formData.append('address', form.address)
 	formData.append('city', form.city)
 	formData.append('postal', form.postal)
-	formData.append('id', form.id)
 	formData.append('username', username as string)
 	formData.append('email', email as string)
 	
 	try{
-	const res = await axios.post(`${url}manager/verify_me/`, formData, {
+	const res = await axios.post(`${url}manager/verify_me_plus/`, formData, {
 		headers: {
 			'Content-Type': 'multipart/form-data'
 		}

@@ -212,7 +212,7 @@ onMounted(() => {
             <div class="py-20  font-sans">
                 
                 <ul>
-                    <NuxtLink :to="`/user/activePlan/${plan.transact_id}`" v-for="(plan, index) in plans" >
+                    <NuxtLink :to="`/user/activePlan/${plan.transact_id}`" v-for="(plan, index) in plans" :key="index">
                         <li class="flex justify-between items-center  text-black/70 md:px-7 py-3 hover:bg-slate-200 mb-4">
                             <h4 class="font-bold capitalize text-lg">{{ plan.plan }} -
                                 <span class="text-base font-mono font-semibold">Amount-{{ format_amount(plan.amount) }}</span>

@@ -121,10 +121,18 @@ onMounted(() => {
                             <div class="text-center">
                                 <p class="capitalize font-semibold text-white">{{ account.profile.user.first_name }} {{
                                     account.profile.user.last_name }}</p>
-                                <small v-if="account.profile.verified"
+                                <small v-if="account.profile.verified & !account.profile.verification_plus"
                                 class="font-serif text-xs block my-2 text-green-500  py-0.5 px-4 rounded-full bg-slate-900/50 w-fit mx-auto">
-                                verified <i class="fa fa-certificate"></i>
+                                verified <i class="fa fa-certificate"></i> &nbsp;
+                                <small  class="font-serif text-xs my-2 text-orange-500 w-fit mx-auto">Regular</small>
                                 </small>
+
+                                <small v-else-if="account.profile.verified & account.profile.verification_plus"
+                                class="font-serif text-xs block my-2 text-green-500  py-0.5 px-4 rounded-full bg-slate-900/50 w-fit mx-auto">
+                                verified <i class="fa fa-certificate"></i> &nbsp;
+                                <small  class="font-serif text-xs  my-2 text-orange-500  w-fit mx-auto">Plus+</small>
+                                </small>
+
                                 <small v-else
                                 class="font-serif text-xs block my-2 text-yellow-500  py-0.5 px-4 rounded-full bg-slate-900/50 w-fit mx-auto">
                                 unverified
