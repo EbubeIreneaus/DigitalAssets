@@ -31,7 +31,7 @@
         <div class="" v-if="component == 'requirements'">
 			<div class="flex gap-10 px-10 text-sm font-bold my-5 *:bg-slate-50 *:px-7 *:py-px *:rounded-full">
 				<NuxtLink to="/verification/" class="border  px-7 py-px rounded-full text-green-500">verified</NuxtLink>
-				<NuxtLink to="/verification/plus" >verified plus</NuxtLink>
+				<NuxtLink to="/verification/plus" > plus</NuxtLink>
 			</div>
             <div class="px-4">
                 <h2 class="font-semibold">Requirements</h2>

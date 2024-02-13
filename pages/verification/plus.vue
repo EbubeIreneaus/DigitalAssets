@@ -30,7 +30,7 @@
 		<Transition>
         <div class="" v-if="component == 'requirements'">
 			<div class="flex gap-10 px-10  text-sm font-bold my-5 *:bg-slate-50 *:px-7 *:py-px *:rounded-full">
-				<NuxtLink to="/verification/plus"  class="border border-orange-500 px-7 py-px rounded-full text-green-500">verified plus</NuxtLink>
+				<NuxtLink to="/verification/plus"  class="border border-orange-500 px-7 py-px rounded-full text-green-500">plus</NuxtLink>
 				<NuxtLink to="/verification/">verified</NuxtLink>
 			</div>
             <div class="px-4">
