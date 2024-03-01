@@ -1,5 +1,5 @@
 <template>
-    <div class="opacity-[0.15]">
+    <div>
         <NuxtLayout :api="api">
             <NuxtLoadingIndicator />
             <NuxtPage :api="api" /> <!-- https://digital-assets-b.vercel.app/ -->
