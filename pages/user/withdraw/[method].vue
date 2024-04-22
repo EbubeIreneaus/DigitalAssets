@@ -127,6 +127,11 @@ const initiate = async (e) => {
         alert("could not initiate this transaction at this moment try again later!!!");
         sbutton.disabled = false;
     }
+
+    if (error.value) {
+        alert("could not initiate this transaction at this moment try again later!!!");
+        sbutton.disabled = false;
+    }
 }
 
 const { data: charges, error: error } = await useFetch(`${url}manager/charges/`)
