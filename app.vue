@@ -2,14 +2,14 @@
     <div>
         <NuxtLayout :api="api">
             <NuxtLoadingIndicator />
-            <NuxtPage :api="api" /> <!-- https://digital-assets-b.vercel.app/ -->
+            <NuxtPage :api="api" /> 
         </NuxtLayout>
     
     </div>
 </template>
 
 <script setup>
-const api = "https://digital-assets-b.vercel.app/"
+const api = "https://backend.digitalassets.com.ng/"
 // const api = "http://127.0.0.1:8000/"
 onMounted(() => {
   AOS.init({
