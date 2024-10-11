@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-const api = "https://backend.digitalassets.com.ng/"
+const api = "https://digitalassets.com.ng/"
 // const api = "http://127.0.0.1:8000/"
 onMounted(() => {
   AOS.init({
