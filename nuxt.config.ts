@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   app: {
     pageTransition: {
       name: 'page',
@@ -63,6 +64,7 @@ export default defineNuxtConfig({
     },
 
   },
+
   css: ['~/assets/css/style.css', '~/assets/css/main.css', '@fortawesome/fontawesome-free/css/all.css',
     '@splidejs/splide/css', 'animate.css/animate.css'],
 
@@ -73,4 +75,5 @@ export default defineNuxtConfig({
     },
   },
 
+  compatibilityDate: '2024-10-12',
 })
