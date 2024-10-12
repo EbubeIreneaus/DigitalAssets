@@ -11,6 +11,9 @@
 <script setup>
 const api = "https://digitalassets.com.ng/"
 // const api = "http://127.0.0.1:8000/"
+
+provide('api', api)
+
 onMounted(() => {
   AOS.init({
     offset: 120, // offset (in px) from the original trigger point

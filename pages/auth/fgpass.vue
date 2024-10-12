@@ -3,7 +3,7 @@ import Axios from 'axios'
 definePageMeta({
     layout: 'auth'
 })
-const url = inject('url')
+const url = inject('api')
 const username = ref('')
 const success = ref(false)
 const dnrl = ref(false) // did not recieve link 
