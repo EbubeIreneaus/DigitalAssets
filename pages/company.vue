@@ -216,9 +216,10 @@ onMounted(() => {
               Meet Our <span class="text-orange-500">Team</span>
             </h3>
             <p class="mt-4 text-md leading-7 text-gray-500 font-light">
-                At the heart of our company is a team of dedicated professionals who are passionate about what
-                they do. Each member brings a unique set of skills and experiences, working collaboratively to
-                 deliver outstanding results. 
+              At the heart of our company is a team of dedicated professionals
+              who are passionate about what they do. Each member brings a unique
+              set of skills and experiences, working collaboratively to deliver
+              outstanding results.
               <br /><br />
               every individual plays an integral role in our success.
             </p>
@@ -232,4 +233,11 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+a {
+  img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+</style>
