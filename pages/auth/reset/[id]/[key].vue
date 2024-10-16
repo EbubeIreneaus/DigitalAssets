@@ -35,7 +35,7 @@ import Axios from 'axios'
 definePageMeta({
     layout:'auth'
 })
-const url = inject('url')
+const url = inject('api')
 const password = ref('')
 const cpassword = ref('')
 
