@@ -1,18 +1,18 @@
 <template>
-    <div>
-        <NuxtLayout :api="api">
-            <NuxtLoadingIndicator />
-            <NuxtPage :api="api" /> 
-        </NuxtLayout>
-    
-    </div>
+  <div>
+    <NuxtLayout :api="api">
+      <NuxtLoadingIndicator />
+      <NuxtPage :api="api" />
+    </NuxtLayout>
+    <div class="gtranslate_wrapper"></div>
+  </div>
 </template>
 
 <script setup>
-const api = "https://digitalassets.com.ng/"
+const api = "https://digitalassets.com.ng/";
 // const api = "http://127.0.0.1:8000/"
 
-provide('api', api)
+provide("api", api);
 
 onMounted(() => {
   AOS.init({
@@ -24,7 +24,22 @@ onMounted(() => {
     mirror: false, // whether elements should animate out while scrolling past them
     anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
   });
-})
+
+  window.gtranslateSettings = {
+    default_language: "en",
+    wrapper_selector: ".gtranslate_wrapper",
+    switcher_open_direction: "top",
+    flag_style: "3d",
+  };
+
+  const gt_script = document.createElement("script");
+  gt_script.setAttribute(
+    "src",
+    "https://cdn.gtranslate.net/widgets/latest/dwf.js"
+  );
+  gt_script.setAttribute("defer", true);
+  document.head.appendChild(gt_script);
+});
 </script>
 
 <style scoped>
