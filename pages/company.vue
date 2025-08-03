@@ -26,7 +26,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class=" ">
+    <div class="">
       <div
         class="grid sm:gap-5 md:gap-10 sm:grid-cols-2 md:px-24 my-10 px-3 shadow-md py-10"
       >
@@ -92,6 +92,8 @@ onMounted(() => {
         </div>
       </div>
     </div>
+
+    
     <div class="my-5">
       <div class="py-14 bg-white">
         <div

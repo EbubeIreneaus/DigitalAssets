@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-const api = "https://digitalassets.com.ng/";
+const api = "https://server.digitalassetsgrowth.com/";
 // const api = "http://127.0.0.1:8000/"
 
 provide("api", api);
